@@ -9,6 +9,9 @@ import { GiCardJoker } from 'react-icons/gi';
 import { GiInfo } from 'react-icons/gi';
 import { MdPermContactCalendar } from 'react-icons/md';
 
+// closing icon for dropdown menu
+import { IoMdCloseCircleOutline } from 'react-icons/io';
+
 // shadcn.ui components
 import {
   DropdownMenu,
@@ -18,14 +21,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import Link from 'next/link';
 
+// This is the dropdown menu that appears once clicking the burger menu icon
 const Dropdown = () => {
   return (
     <div>
       <div className="flex justify-start p-4 py-10">
-        {/* Burger menu */}
         <DropdownMenu>
           <DropdownMenuTrigger>
+            {/* Burger menu */}
             <div className="space-y-1 border-none">
               <span className="block w-5 h-0.5 bg-[#9FC131]"></span>
               <span className="block w-3 h-0.5 bg-[#E55982]"></span>
@@ -38,14 +43,18 @@ const Dropdown = () => {
                 <DropdownMenuItem>
                   <GiHouse />
                 </DropdownMenuItem>
-                <DropdownMenuLabel>Home</DropdownMenuLabel>
+                <DropdownMenuLabel>
+                  <Link href="/">Home</Link>
+                </DropdownMenuLabel>
               </div>
               <div className="m-0 p-0 space-y-0">
                 <div className="flex flex-row">
                   <DropdownMenuItem>
                     <GiCakeSlice />
                   </DropdownMenuItem>
-                  <DropdownMenuLabel>Bespoke Cakes</DropdownMenuLabel>
+                  <DropdownMenuLabel>
+                    <Link href="/bespoke-cakes">Bespoke Cakes</Link>
+                  </DropdownMenuLabel>
                 </div>
                 <DropdownMenuItem className="flex flex-wrap">
                   Lorem Ipsum Yabba Dabba Doooooo
@@ -56,7 +65,9 @@ const Dropdown = () => {
                   <DropdownMenuItem>
                     <GiCardJoker />
                   </DropdownMenuItem>
-                  <DropdownMenuLabel>Tarot Readings</DropdownMenuLabel>
+                  <DropdownMenuLabel>
+                    <Link href="/tarot-readings">Tarot Readings</Link>
+                  </DropdownMenuLabel>
                 </div>
                 <DropdownMenuItem className="flex flex-wrap">
                   Lorem Ipsum Yabba Dabba Doooooo
@@ -66,13 +77,17 @@ const Dropdown = () => {
                 <DropdownMenuItem>
                   <GiInfo />
                 </DropdownMenuItem>
-                <DropdownMenuLabel>About us</DropdownMenuLabel>
+                <DropdownMenuLabel>
+                  <Link href="/about-us">About us</Link>
+                </DropdownMenuLabel>
               </div>
               <div className="flex flex-row">
                 <DropdownMenuItem>
                   <MdPermContactCalendar />
                 </DropdownMenuItem>
-                <DropdownMenuLabel>Contact</DropdownMenuLabel>
+                <DropdownMenuLabel>
+                  <Link href="/contacts">Contact</Link>
+                </DropdownMenuLabel>
               </div>
             </div>
             <DropdownMenuSeparator />
