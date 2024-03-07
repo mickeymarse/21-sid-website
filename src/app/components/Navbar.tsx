@@ -42,6 +42,7 @@ const Navbar: React.FC = () => {
         <NavigationButton href="/about-us" page="About us" />
         <NavigationButton href="/contacts" page="Contacts" />
       </div>
+      {/* Check alternative button for app download */}
       <div className="flex w-40">
         <a
           href="#"
