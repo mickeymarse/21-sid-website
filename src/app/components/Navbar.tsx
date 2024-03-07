@@ -1,11 +1,28 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 
 // shadcn.ui components
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import NavigationButton from './NavigationButton';
 
 const Navbar: React.FC = () => {
-  return (
+  // Variables and hooks to conditionally render navbar based on viewport size
+  const [isVisible, setIsVisible] = useState(window.innerWidth >= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsVisible(window.innerWidth >= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return isVisible ? (
     <nav className="lg:flex items-center justify-between flex-wrap bg-[#9FC131] py-2 px-4 w-full lg:h-20 opacity-95 sticky top-0 border-b border-gray-200 hidden h-10">
       <div className="flex items-start w-40">
         <Avatar className="h-14 w-14">
@@ -28,8 +45,19 @@ const Navbar: React.FC = () => {
           <button>Download the app</button>
         </a>
       </div>
-      {/* Download the app alternative */}
-      {/* <div className="lg:flex w-40 hidden">
+    </nav>
+  ) : (
+    <h1>Hello</h1>
+  );
+};
+
+export default Navbar;
+
+{
+  /* Download the app alternative */
+}
+{
+  /* <div className="lg:flex w-40 hidden">
         <a
           href="#"
           className="inline-block text-sm px-4 py-2 border rounded shadow-xl bg-[#E55982] text-slate-200 border-slate-700 font-medium mt-4 lg:mt-0"
@@ -41,9 +69,5 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
         </a>
-      </div> */}
-    </nav>
-  );
-};
-
-export default Navbar;
+      </div> */
+}
