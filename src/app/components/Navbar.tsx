@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-[#9FC131] py-2 px-4 w-full max-h-20 opacity-95 sticky top-0">
+    <nav className="flex items-center justify-between flex-wrap bg-[#9FC131] py-2 px-4 w-full max-h-20 opacity-95 sticky top-0 border-b border-gray-200">
       <div className="flex items-start w-40">
         <Avatar className="h-14 w-14">
           <AvatarImage src="https://github.com/shadcn.png" />
@@ -14,27 +14,27 @@ const Navbar = () => {
       </div>
       <div className="flex flex-wrap m-0 p-0 items-center justify-center">
         <a href="/" className="block mt-4 lg:inline-block lg:mt-0 mr-2">
-          <button className="inline-block text-sm px-4 py-2 rounded-xl text-slate-900 font-medium hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl">
+          <button className="inline-block text-sm px-4 py-2 rounded-xl text-slate-900 font-medium hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none">
             Home
           </button>
         </a>
         <a href="/" className="block mt-4 lg:inline-block lg:mt-0 mr-2">
-          <button className="inline-block text-sm font-medium px-4 py-2 rounded-xl text-slate-900 hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl">
+          <button className="inline-block text-sm font-medium px-4 py-2 rounded-xl text-slate-900 hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none">
             Bespoke Cakes
           </button>
         </a>
         <a href="/" className="block mt-4 lg:inline-block lg:mt-0 mr-2">
-          <button className="inline-block text-sm px-4 py-2 rounded-xl text-slate-900 font-medium hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl">
+          <button className="inline-block text-sm px-4 py-2 rounded-xl text-slate-900 font-medium hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none">
             Tarot Readings
           </button>
         </a>
         <a href="/" className="block mt-4 lg:inline-block lg:mt-0 mr-2">
-          <button className="inline-block text-sm font-medium px-4 py-2 rounded-xl text-slate-900 hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl">
+          <button className="inline-block text-sm font-medium px-4 py-2 rounded-xl text-slate-900 hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none">
             About us
           </button>
         </a>
         <a href="/" className="block mt-4 lg:inline-block lg:mt-0">
-          <button className="inline-block text-sm px-4 py-2 rounded-xl font-medium text-slate-900 hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl">
+          <button className="inline-block text-sm px-4 py-2 rounded-xl font-medium text-slate-900 hover:bg-[#E55982] mt-4 lg:mt-0 shadow-xl hover:shadow-xl transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none">
             Contacts
           </button>
         </a>
