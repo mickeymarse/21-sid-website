@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 // shadcn.ui components
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -7,7 +6,7 @@ import NavigationButton from './NavigationButton';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-[#9FC131] py-2 px-4 w-full max-h-20 opacity-95 sticky top-0 border-b border-gray-200">
+    <nav className="lg:flex items-center justify-between flex-wrap bg-[#9FC131] py-2 px-4 w-full lg:h-20 opacity-95 sticky top-0 border-b border-gray-200 hidden h-10">
       <div className="flex items-start w-40">
         <Avatar className="h-14 w-14">
           <AvatarImage src="https://github.com/shadcn.png" />
@@ -21,7 +20,7 @@ const Navbar: React.FC = () => {
         <NavigationButton href="/about-us" page="About us" />
         <NavigationButton href="/contacts" page="Contacts" />
       </div>
-      <div className="w-40">
+      <div className="flex w-40">
         <a
           href="#"
           className="inline-block text-sm px-4 py-2 border rounded shadow-xl bg-[#E55982] text-slate-200 border-slate-700 font-medium mt-4 lg:mt-0"
@@ -30,7 +29,7 @@ const Navbar: React.FC = () => {
         </a>
       </div>
       {/* Download the app alternative */}
-      {/* <div className="w-40">
+      {/* <div className="lg:flex w-40 hidden">
         <a
           href="#"
           className="inline-block text-sm px-4 py-2 border rounded shadow-xl bg-[#E55982] text-slate-200 border-slate-700 font-medium mt-4 lg:mt-0"
