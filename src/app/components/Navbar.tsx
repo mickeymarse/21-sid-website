@@ -2,6 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 
+// icons
+import { CgMenuLeftAlt } from 'react-icons/cg';
+
 // shadcn.ui components
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import NavigationButton from './NavigationButton';
@@ -47,7 +50,9 @@ const Navbar: React.FC = () => {
       </div>
     </nav>
   ) : (
-    <h1>Hello</h1>
+    <div className="flex justify-start p-4 py-10">
+      <CgMenuLeftAlt className="w-6 h-6" />
+    </div>
   );
 };
 
