@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
       <div className="flex flex-wrap m-0 p-0 items-center justify-center">
         <NavigationButton href="/" page="Home" />
         <NavigationButton href="/bespoke-cakes" page="Bespoke Cakes" />
-        <NavigationButton href="/tarot-reading" page="Tarot Readings" />
+        <NavigationButton href="/tarot-readings" page="Tarot Readings" />
         <NavigationButton href="/about-us" page="About us" />
         <NavigationButton href="/contacts" page="Contacts" />
       </div>
