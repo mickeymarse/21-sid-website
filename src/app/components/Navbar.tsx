@@ -5,9 +5,9 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-slate-500 p-6 w-full">
+    <nav className="flex items-center justify-between flex-wrap bg-slate-500 py-2 px-4 w-full">
       <div className="flex items-start">
-        <Avatar>
+        <Avatar className="h-14 w-14">
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>21 SID Logo</AvatarFallback>
         </Avatar>
