@@ -2,15 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 
-// icons
-import { CgMenuLeftAlt } from 'react-icons/cg';
-
 // shadcn.ui components
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import NavigationButton from './NavigationButton';
 
+// components
+import NavigationButton from './NavigationButton';
+import Dropdown from './DropdownMenu';
+
+// Navbar component
 const Navbar: React.FC = () => {
-  // Variables and hooks to conditionally render navbar based on viewport size
+  // Variable and hooks to conditionally render navbar based on viewport size
   const [isVisible, setIsVisible] = useState(window.innerWidth >= 768);
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   return isVisible ? (
+    // Larger screens
     <nav className="lg:flex items-center justify-between flex-wrap bg-[#9FC131] py-2 px-4 w-full lg:h-20 opacity-95 sticky top-0 border-b border-gray-200 hidden h-10">
       <div className="flex items-start w-40">
         <Avatar className="h-14 w-14">
@@ -50,19 +52,17 @@ const Navbar: React.FC = () => {
       </div>
     </nav>
   ) : (
-    <div className="flex justify-start p-4 py-10">
-      <CgMenuLeftAlt className="w-6 h-6" />
-    </div>
+    // Smaller screens
+    <>
+      <Dropdown />
+    </>
   );
 };
 
 export default Navbar;
 
-{
-  /* Download the app alternative */
-}
-{
-  /* <div className="lg:flex w-40 hidden">
+/* Download the app alternative */
+/* <div className="lg:flex w-40 hidden">
         <a
           href="#"
           className="inline-block text-sm px-4 py-2 border rounded shadow-xl bg-[#E55982] text-slate-200 border-slate-700 font-medium mt-4 lg:mt-0"
@@ -75,4 +75,3 @@ export default Navbar;
           </button>
         </a>
       </div> */
-}
