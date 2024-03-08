@@ -34,7 +34,7 @@ const Dropdown = () => {
 
   return (
     <div>
-      <div className="flex justify-start p-4 py-10">
+      <div className="flex justify-start p-4 mt-8">
         <DropdownMenu>
           {/* DropdownMenuTrigger is the "button" that triggers the menu */}
           <DropdownMenuTrigger onClick={handleToggleDropdown}>
