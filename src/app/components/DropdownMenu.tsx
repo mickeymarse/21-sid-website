@@ -36,6 +36,7 @@ const Dropdown = () => {
     <div>
       <div className="flex justify-start p-4 py-10">
         <DropdownMenu>
+          {/* DropdownMenuTrigger is the "button" that triggers the menu */}
           <DropdownMenuTrigger onClick={handleToggleDropdown}>
             {isOpen ? (
               <IoMdCloseCircleOutline />
