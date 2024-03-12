@@ -11,11 +11,9 @@ export default function RainbowBg() {
       </div>
 
       {/* right */}
-      <div className="sm:absolute sm:right-0">
-        <div className="rainbow_green sm:top-0"></div>
-        <div className="rainbow_pink top-[20rem]  sm:top-[40rem]"></div>
-        <div className="rainbow_green top-[40rem] rainbow_green sm:top-[80rem]"></div>
-      </div>
+        <div className="rainbow_green sm:top-0 sm:right-0"></div>
+        <div className="rainbow_pink top-[35rem]  sm:top-[40rem] sm:right-0"></div>
+        <div className="rainbow_green top-[60rem] rainbow_green sm:top-[80rem] sm:right-0"></div>
     </>
   );
 }
