@@ -15,15 +15,19 @@ const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(window.innerWidth >= 768);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsVisible(window.innerWidth >= 768);
-    };
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setIsVisible(window.innerWidth >= 768);
+      };
 
-    window.addEventListener('resize', handleResize);
+      handleResize(); // Call handleResize once to set initial visibility
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   return isVisible ? (
