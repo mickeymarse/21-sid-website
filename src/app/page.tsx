@@ -1,6 +1,6 @@
 import { getStoryblokApi, StoryblokComponent } from '@storyblok/react/rsc';
 
-export async function fetchData() {
+async function fetchData() {
   // Check sbParams type error
   let sbParams: any = { version: 'draft' };
 
