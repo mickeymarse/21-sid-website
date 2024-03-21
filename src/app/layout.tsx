@@ -1,7 +1,30 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Footer from './Footer.tsx';
+
+// Components
+import Footer from './components/Footer.tsx';
+
+// Storyblok
+import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
+import StoryblokBridgeLoader from '@storyblok/react/bridge-loader';
+
+import Page from './components/storyblok/Page.tsx';
+import Grid from './components/storyblok/Grid.tsx';
+import Feature from './components/storyblok/Feature.tsx';
+import Teaser from './components/storyblok/Teaser.tsx';
+
+storyblokInit({
+  accessToken: process.env.STORYBLOK_API_TOKEN,
+
+  use: [apiPlugin],
+  components: {
+    feature: Feature,
+    grid: Grid,
+    page: Page,
+    teaser: Teaser,
+  },
+});
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +44,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      <StoryblokBridgeLoader options={{}} />
     </html>
   );
 }
