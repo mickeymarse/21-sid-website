@@ -12,7 +12,8 @@ export default async function Home() {
 }
 
 async function fetchData() {
-  let sbParams = { version: 'draft' };
+  // Check sbParams type error
+  let sbParams: any = { version: 'draft' };
 
   const storyblokApi = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/home`, sbParams, { cache: 'no-store' });
