@@ -11,7 +11,7 @@ export default async function Home() {
   );
 }
 
-async function fetchData() {
+export async function fetchData() {
   // Check sbParams type error
   let sbParams: any = { version: 'draft' };
 
