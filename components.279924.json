@@ -1,0 +1,103 @@
+{
+  "components": [
+    {
+      "name": "feature",
+      "display_name": null,
+      "created_at": "2024-03-12T09:44:20.317Z",
+      "updated_at": "2024-03-12T09:44:20.317Z",
+      "id": 5481416,
+      "schema": {
+        "name": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "feature",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "grid",
+      "display_name": null,
+      "created_at": "2024-03-12T09:44:20.270Z",
+      "updated_at": "2024-03-21T12:36:45.364Z",
+      "id": 5481415,
+      "schema": {
+        "columns": {
+          "type": "bloks",
+          "filetypes": [
+            "images"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "grid",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "page",
+      "display_name": null,
+      "created_at": "2024-03-12T09:44:20.125Z",
+      "updated_at": "2024-03-12T09:44:20.125Z",
+      "id": 5481413,
+      "schema": {
+        "body": {
+          "type": "bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "page",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "teaser",
+      "display_name": null,
+      "created_at": "2024-03-12T09:44:20.215Z",
+      "updated_at": "2024-03-12T09:44:20.215Z",
+      "id": 5481414,
+      "schema": {
+        "headline": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "teaser",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null
+    }
+  ]
+}
