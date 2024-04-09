@@ -7,3 +7,32 @@ body {
   margin: 0;
   padding: 0;
 }
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.rainbow_green{
+  @apply bg-[#b5ff66] absolute -z-10 h-[30rem] w-[30rem] rounded-full blur-[15rem]
+}
+
+.rainbow_pink{
+  @apply bg-[#f66ef8] absolute -z-10 h-[30rem] w-[30rem] rounded-full blur-[15rem]
+}
+
+
+@media (max-width: 640px) {
+  .rainbow_green{
+    @apply bg-[#b5ff66] absolute -z-10 h-[15rem] w-full rounded-full blur-[8rem]
+  }
+
+  .rainbow_pink{
+    @apply bg-[#f66ef8] absolute -z-10 h-[15rem] w-full rounded-full blur-[10rem]
+  }
+}
+
