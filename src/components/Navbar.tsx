@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Larger screens */}
-      <nav className='hidden lg:flex items-center justify-between flex-wrap bg-[#9FC131] py-2 px-4 w-full h-20 opacity-95 border-b border-gray-200'>
+      <nav className='hidden lg:flex items-center justify-between flex-wrap  py-2 px-4 w-full h-20 opacity-85 border-b border-gray-200'>
         <div className='flex items-start w-40'>
           <Avatar className='h-14 w-14'>
             <AvatarImage src='logo.png' />
