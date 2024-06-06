@@ -26,13 +26,14 @@ body {
 }
 
 
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {} */
   .rainbow_green{
-    @apply bg-[#b5ff66] absolute -z-10 h-[15rem] w-full rounded-full blur-[8rem]
+    @apply bg-[#c7fcc7] absolute -z-10 h-[25rem] w-[50rem] rounded-full blur-[8rem]
   }
-
+  /* b5ff66 */
   .rainbow_pink{
-    @apply bg-[#f66ef8] absolute -z-10 h-[15rem] w-full rounded-full blur-[10rem]
+    @apply bg-[#fcc7f9] absolute -z-10 h-[25rem] w-[50rem] rounded-full blur-[10rem]
   }
-}
+  /* f66ef8 */
+
 
