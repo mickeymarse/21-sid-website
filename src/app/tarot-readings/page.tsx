@@ -1,7 +1,3 @@
-import React from 'react';
-
-const TarotReadings = () => {
-  return <div>Trot Readings</div>;
-};
-
-export default TarotReadings;
+export default function TarotReadings() {
+  return <div>TarotReadings</div>;
+}
