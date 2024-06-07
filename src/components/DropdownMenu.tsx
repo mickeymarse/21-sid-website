@@ -1,16 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-
-// icons
-import { GiHouse } from 'react-icons/gi';
-import { GiCakeSlice } from 'react-icons/gi';
-import { GiCardJoker } from 'react-icons/gi';
-import { GiInfo } from 'react-icons/gi';
-import { MdPermContactCalendar } from 'react-icons/md';
-
-// closing icon for dropdown menu
-import { IoMdCloseCircleOutline } from 'react-icons/io';
+import React, { useState } from "react";
+import Link from "next/link";
 
 // shadcn.ui components
 import {
@@ -19,86 +10,102 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import Link from 'next/link';
+} from "@/components/ui/dropdown-menu";
+import { LeafyGreenIcon } from "lucide-react";
 
 // This is the dropdown menu that appears once clicking the burger menu icon
 const Dropdown = () => {
   // Variable and hooks to toggle icons from burger menu icon to closing one
-  // Currently NOT working
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   return (
     <div>
-      <div className="flex justify-start p-4 mt-8">
-        <DropdownMenu>
+      <div className="flex justify-start p-4 mt-2">
+        <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           {/* DropdownMenuTrigger is the "button" that triggers the menu */}
-          <DropdownMenuTrigger onClick={handleToggleDropdown}>
-            {isOpen ? (
-              <IoMdCloseCircleOutline />
-            ) : (
-              <div className="space-y-1 border-none">
-                <span className="block w-5 h-0.5 bg-[#9FC131]"></span>
-                <span className="block w-3 h-0.5 bg-[#E55982]"></span>
-                <span className="block w-4 h-0.5 bg-[#9FC131]"></span>
-              </div>
-            )}
+          <DropdownMenuTrigger asChild>
+            <button
+              onClick={handleToggleDropdown}
+              className="focus:outline-none"
+            >
+              {isOpen ? (
+                <div className="my-2">
+                  <div className="absolute w-6 h-0.5 bg-green_sid transform rotate-45"></div>
+                  <div className="absolute w-6 h-0.5 bg-pink_sid transform -rotate-45"></div>
+                </div>
+              ) : (
+                <div className="space-y-1">
+                  <span className="block w-7 h-0.5 bg-green_sid"></span>
+                  <span className="block w-5 h-0.5 bg-pink_sid"></span>
+                  <span className="block w-6 h-0.5 bg-green_sid"></span>
+                </div>
+              )}
+            </button>
           </DropdownMenuTrigger>
           {/* Style DropdownMenuContent to style the whole container */}
-          <DropdownMenuContent className="bg-white h-screen border rounded-xl">
+          <DropdownMenuContent className="bg-[#bef2b4] h-screen w-screen mt-6">
             <div className="space-y-10 m-6">
               <div className="flex flex-row m-0 p-0">
-                <DropdownMenuItem>
-                  <GiHouse />
-                </DropdownMenuItem>
                 <DropdownMenuLabel>
-                  <Link href="/">Home</Link>
+                  <Link
+                    className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
+                    style={{ "--line-color": "#27D507" }}
+                    href="/"
+                  >
+                    Home
+                  </Link>
                 </DropdownMenuLabel>
               </div>
               <div className="m-0 p-0 space-y-0">
                 <div className="flex flex-row">
-                  <DropdownMenuItem>
-                    <GiCakeSlice />
-                  </DropdownMenuItem>
                   <DropdownMenuLabel>
-                    <Link href="/bespoke-cakes">Bespoke Cakes</Link>
+                    <Link
+                      className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
+                      style={{ "--line-color": "#FF69B4" }}
+                      href="/bespoke-cakes"
+                    >
+                      Bespoke Cakes
+                    </Link>
                   </DropdownMenuLabel>
                 </div>
-                <DropdownMenuItem className="flex flex-wrap">
-                  Lorem Ipsum Yabba Dabba Doooooo
-                </DropdownMenuItem>
               </div>
               <div className="space-y-0">
                 <div className="flex flex-row">
-                  <DropdownMenuItem>
-                    <GiCardJoker />
-                  </DropdownMenuItem>
                   <DropdownMenuLabel>
-                    <Link href="/tarot-readings">Tarot Readings</Link>
+                    <Link
+                      className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
+                      style={{ "--line-color": "#27D507" }}
+                      href="/tarot-readings"
+                    >
+                      Tarot Readings
+                    </Link>
                   </DropdownMenuLabel>
                 </div>
-                <DropdownMenuItem className="flex flex-wrap">
-                  Lorem Ipsum Yabba Dabba Doooooo
-                </DropdownMenuItem>
               </div>
               <div className="flex flex-row">
-                <DropdownMenuItem>
-                  <GiInfo />
-                </DropdownMenuItem>
                 <DropdownMenuLabel>
-                  <Link href="/about-us">About us</Link>
+                  <Link
+                    className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
+                    style={{ "--line-color": "#FF69B4" }}
+                    href="/about-us"
+                  >
+                    About us
+                  </Link>
                 </DropdownMenuLabel>
               </div>
               <div className="flex flex-row">
-                <DropdownMenuItem>
-                  <MdPermContactCalendar />
-                </DropdownMenuItem>
                 <DropdownMenuLabel>
-                  <Link href="/contacts">Contact</Link>
+                  <Link
+                    className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
+                    style={{ "--line-color": "#27D507" }}
+                    href="/contacts"
+                  >
+                    Contact
+                  </Link>
                 </DropdownMenuLabel>
               </div>
             </div>

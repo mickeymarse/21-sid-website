@@ -11,7 +11,7 @@ const NavigationButton: React.FC<NavigationButton> = ({ href, page }) => {
     <div>
       <Link
         href={href}
-        className="block mt-4 lg:inline-block lg:mt-0 mr-2 text-sm px-4 py-2 rounded-xl text-slate-900 font-medium hover:bg-pink_sid shadow-xl hover:shadow-xl transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none"
+        className="block underline underline-offset-8 decoration-dotted decoration-green_sid/50 hover:no-underline mt-4 lg:inline-block lg:mt-0 mr-6 text-m px-4 py-2 rounded-xl text-slate-900 font-medium hover:bg-pink_sid/60 shadow-m hover:shadow-xl transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none "
       >
         {page}
       </Link>
