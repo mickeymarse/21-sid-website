@@ -14,21 +14,20 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Larger screens */}
-      <nav className='sticky top-0 hidden lg:flex items-center justify-between flex-wrap  py-2 px-4 w-full h-20 bg-gray-400/30 border-b border-gray-200'>
+      <nav className='sticky top-0 hidden lg:flex items-center justify-between flex-wrap  py-2 px-8 w-full h-21 bg-[#f2f2f2]/80 border-b border-gray-200 '>
         <div className='flex items-start w-40'>
-          {/* <Avatar className='h-14 w-14 border border-slate-700'>
+          <Avatar className='h-14 w-14 border border-slate-700'>
             <AvatarImage src='logo.png' />
             <AvatarFallback >21 SID</AvatarFallback>
-          </Avatar> */}
-          <Dropdown />
+          </Avatar>
         </div>
-        {/* <div className='flex flex-wrap m-0 p-0 items-center justify-center'>
+        <div className='flex flex-wrap m-0 p-0 items-center justify-center'>
           <NavigationButton href='/' page='Home' />
           <NavigationButton href='/bespoke-cakes' page='Bespoke Cakes' />
           <NavigationButton href='/tarot-readings' page='Tarot Readings' />
           <NavigationButton href='/about-us' page='About us' />
           <NavigationButton href='/contacts' page='Contacts' />
-        </div> */}
+        </div>
         <div className='flex w-40'>
           <a
             href='#'
