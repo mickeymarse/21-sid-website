@@ -22,11 +22,11 @@ const Navbar: React.FC = () => {
           </Avatar>
         </div>
         <div className='flex flex-wrap m-0 p-0 items-center justify-center'>
-          <NavigationButton href='/' page='Home' />
-          <NavigationButton href='/bespoke-cakes' page='Bespoke Cakes' />
-          <NavigationButton href='/tarot-readings' page='Tarot Readings' />
-          <NavigationButton href='/about-us' page='About us' />
-          <NavigationButton href='/contacts' page='Contacts' />
+          <NavigationButton href='/' page='Home' color='green'/>
+          <NavigationButton href='/bespoke-cakes' page='Bespoke Cakes' color='pink'/>
+          <NavigationButton href='/tarot-readings' page='Tarot Readings' color='green'/>
+          <NavigationButton href='/about-us' page='About us' color='pink'/>
+          <NavigationButton href='/contacts' page='Contacts' color='green'/>
         </div>
         <div className='flex w-40'>
           <a
