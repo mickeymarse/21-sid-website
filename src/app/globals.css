@@ -35,14 +35,27 @@ body {
   display: inline-block;
 }
 
-.line-gradient::after {
+.line-gradient-green::after {
   content: "";
   position: absolute;
   left: 100%;
   top: 50%;
   height: 3px;
   width: 60vw;
-  background: linear-gradient(to right, var(--line-color), transparent);
+  background: linear-gradient(to right, #27D507, transparent);
+  background-repeat: no-repeat;
+  margin-left: 8px;
+  transform: 'translateY(-50%)'
+}
+
+.line-gradient-pink::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  height: 3px;
+  width: 60vw;
+  background: linear-gradient(to right, #FF69B4, transparent);
   background-repeat: no-repeat;
   margin-left: 8px;
   transform: 'translateY(-50%)'

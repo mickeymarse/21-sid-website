@@ -52,8 +52,7 @@ const Dropdown = () => {
               <div className="flex flex-row m-0 p-0">
                 <DropdownMenuLabel>
                   <Link
-                    className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
-                    style={{ "--line-color": "#27D507" }}
+                    className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient-green"
                     href="/"
                   >
                     Home
@@ -64,8 +63,8 @@ const Dropdown = () => {
                 <div className="flex flex-row">
                   <DropdownMenuLabel>
                     <Link
-                      className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
-                      style={{ "--line-color": "#FF69B4" }}
+                      className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient-pink"
+
                       href="/bespoke-cakes"
                     >
                       Bespoke Cakes
@@ -77,8 +76,7 @@ const Dropdown = () => {
                 <div className="flex flex-row">
                   <DropdownMenuLabel>
                     <Link
-                      className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
-                      style={{ "--line-color": "#27D507" }}
+                      className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient-green"
                       href="/tarot-readings"
                     >
                       Tarot Readings
@@ -89,8 +87,7 @@ const Dropdown = () => {
               <div className="flex flex-row">
                 <DropdownMenuLabel>
                   <Link
-                    className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
-                    style={{ "--line-color": "#FF69B4" }}
+                    className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient-pink"
                     href="/about-us"
                   >
                     About us
@@ -100,8 +97,7 @@ const Dropdown = () => {
               <div className="flex flex-row">
                 <DropdownMenuLabel>
                   <Link
-                    className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient"
-                    style={{ "--line-color": "#27D507" }}
+                    className="text-slate-900 font-medium relative text-slate-900 font-medium line-gradient-green"
                     href="/contacts"
                   >
                     Contact
