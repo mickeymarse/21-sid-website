@@ -14,24 +14,24 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Larger screens */}
-      <nav className='hidden lg:flex items-center justify-between flex-wrap bg-[#9FC131] py-2 px-4 w-full h-20 opacity-95 border-b border-gray-200'>
+      <nav className='sticky top-0 hidden lg:flex items-center justify-between flex-wrap  py-2 px-8 w-full h-21 bg-[#f2f2f2]/80 border-b border-gray-200 '>
         <div className='flex items-start w-40'>
-          <Avatar className='h-14 w-14'>
+          <Avatar className='h-14 w-14 border border-slate-700'>
             <AvatarImage src='logo.png' />
-            <AvatarFallback>21 SID Logo</AvatarFallback>
+            <AvatarFallback >21 SID</AvatarFallback>
           </Avatar>
         </div>
         <div className='flex flex-wrap m-0 p-0 items-center justify-center'>
-          <NavigationButton href='/' page='Home' />
-          <NavigationButton href='/bespoke-cakes' page='Bespoke Cakes' />
-          <NavigationButton href='/tarot-readings' page='Tarot Readings' />
-          <NavigationButton href='/about-us' page='About us' />
-          <NavigationButton href='/contacts' page='Contacts' />
+          <NavigationButton href='/' page='Home' color='green'/>
+          <NavigationButton href='/bespoke-cakes' page='Bespoke Cakes' color='pink'/>
+          <NavigationButton href='/tarot-readings' page='Tarot Readings' color='green'/>
+          <NavigationButton href='/about-us' page='About us' color='pink'/>
+          <NavigationButton href='/contacts' page='Contacts' color='green'/>
         </div>
         <div className='flex w-40'>
           <a
             href='#'
-            className='inline-block text-sm px-4 py-2 border rounded shadow-xl bg-[#E55982] text-slate-200 border-slate-700 font-medium mt-4 lg:mt-0'
+            className='inline-block text-sm px-4 py-2 border rounded shadow-xl bg-pink_sid/70 text-slate-200 border-slate-700 font-medium mt-4 lg:mt-0 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'
           >
             Download the app
           </a>

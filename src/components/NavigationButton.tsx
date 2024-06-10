@@ -4,15 +4,23 @@ import React from 'react';
 interface NavigationButton {
   href: string;
   page: string;
+  color: 'green' | 'pink';
 }
 
-const NavigationButton: React.FC<NavigationButton> = ({ href, page }) => {
+
+const NavigationButton: React.FC<NavigationButton> = ({ href, page, color }) => {
+
+  const colorVariants = {
+    green: 'hover:bg-green_sid/80',
+    pink: 'hover:bg-pink_sid/80',
+  }
+
   return (
     <div>
       <Link
         href={href}
-        className="block mt-4 lg:inline-block lg:mt-0 mr-2 text-sm px-4 py-2 rounded-xl text-slate-900 font-medium hover:bg-[#E55982] shadow-xl hover:shadow-xl transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none"
-      >
+        className={`block hover:no-underline mt-4 lg:inline-block lg:mt-0 mr-6 text-[1.2rem] font-normal px-4 py-2 rounded-xl text-slate-900 font-medium  shadow-m hover:shadow-xl transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none bg-[#f2f2f2] ${colorVariants[color]}`}
+        >
         {page}
       </Link>
     </div>
