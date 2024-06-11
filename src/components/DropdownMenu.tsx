@@ -22,8 +22,8 @@ const Dropdown = () => {
   };
 
   return (
-    <div className="relative">
-      <div className="flex justify-start m-4">
+    <div className="relative block">
+      <div className="flex justify-start m-4 mb-6">
         <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           {/* DropdownMenuTrigger is the "button" that triggers the menu */}
           <DropdownMenuTrigger
@@ -35,9 +35,9 @@ const Dropdown = () => {
               className="focus:outline-none "
             >
               {isOpen ? (
-                <div className="">
-                  <div className=" w-6 h-0.5 bg-green_sid transform rotate-45"></div>
-                  <div className=" w-6 h-0.5 bg-pink_sid transform -rotate-45"></div>
+                <div className="relative w-6 h-6">
+                  <div className="absolute w-6 h-0.5 bg-green_sid transform rotate-45 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                  <div className="absolute w-6 h-0.5 bg-pink_sid transform -rotate-45 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                 </div>
               ) : (
                 <div className="space-y-[0.3rem]">
@@ -49,7 +49,7 @@ const Dropdown = () => {
             </button>
           </DropdownMenuTrigger>
           {/* Style DropdownMenuContent to style the whole container */}
-          <DropdownMenuContent className="bg-[#f2f2f2] h-screen w-screen mt-4 border-none z-40">
+          <DropdownMenuContent className="bg-[#f2f2f2] h-screen w-screen mt-4 border-none">
             <div className="space-y-10 m-6">
               <div className="flex flex-row m-0 p-0">
                 <DropdownMenuLabel>
