@@ -54,6 +54,8 @@ export function BespokeCakesForm() {
     },
   });
 
+  const { reset } = form;
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     receiptEmail(
       values.emailAddress,
@@ -64,6 +66,7 @@ export function BespokeCakesForm() {
       values.dateOrder?.toString()
     );
     console.log(values);
+    reset();
   }
 
   return (
@@ -76,7 +79,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Your Name</FormLabel>
               <FormControl>
-                <Input placeholder='Please, insert your preferred name.' {...field} />
+                <Input placeholder='' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -89,10 +92,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Email Address</FormLabel>
               <FormControl>
-                <Input
-                  placeholder='This will be to receive confirmation the order has been received.'
-                  {...field}
-                />
+                <Input placeholder='' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -105,11 +105,11 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <Input
-                  placeholder='Laura will likely give you a call to refine the order details.'
-                  {...field}
-                />
+                <Input placeholder='' {...field} />
               </FormControl>
+              <FormDescription>
+                You will receive a call to finalise the order details.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -137,7 +137,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Dietary Requirements</FormLabel>
               <FormControl>
-                <Input placeholder='Peanuts Allergy, Vegan' {...field} />
+                <Input placeholder='' {...field} />
               </FormControl>
               <FormDescription>
                 Inform us about your allergies as well as dietary requirements/preferences.
@@ -153,7 +153,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Flavours</FormLabel>
               <FormControl>
-                <Input placeholder='Chocolate' {...field} />
+                <Input placeholder='' {...field} />
               </FormControl>
               <FormDescription>
                 Let us know about your preferred flavours. This will need to be discussed again
