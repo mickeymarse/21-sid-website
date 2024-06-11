@@ -41,7 +41,7 @@ body {
   left: 100%;
   top: 50%;
   height: 3px;
-  width: 60vw;
+  width: 40vw;
   background: linear-gradient(to right, #27D507, transparent);
   background-repeat: no-repeat;
   margin-left: 8px;
@@ -54,7 +54,7 @@ body {
   left: 100%;
   top: 50%;
   height: 3px;
-  width: 60vw;
+  width: 40vw;
   background: linear-gradient(to right, #FF69B4, transparent);
   background-repeat: no-repeat;
   margin-left: 8px;
