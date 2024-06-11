@@ -33,8 +33,14 @@ const formSchema = z.object({
     .min(3, { message: `Insert N/A if you don't have any dietary requirements.` })
     .max(250),
   flavours: z.string().max(250).optional(),
-  phoneNumber: z.string({ required_error: 'A phone number is required' }).max(14),
-  clientName: z.string({ required_error: 'A name is required' }).max(50),
+  phoneNumber: z
+    .string({ required_error: 'A phone number is required' })
+    .min(11, { message: `Please, insert your number.` })
+    .max(14),
+  clientName: z
+    .string({ required_error: 'A name is required' })
+    .min(2, { message: `Please, insert a name.` })
+    .max(50),
   emailAddress: z
     .string({ required_error: 'An email address is required' })
     .email({ message: `Check the email format is correct.` }),
@@ -67,6 +73,7 @@ export function BespokeCakesForm() {
     );
     console.log(values);
     reset();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   return (
@@ -79,7 +86,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Your Name</FormLabel>
               <FormControl>
-                <Input placeholder='' {...field} />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -92,7 +99,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Email Address</FormLabel>
               <FormControl>
-                <Input placeholder='' {...field} />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -105,7 +112,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <Input placeholder='' {...field} />
+                <Input {...field} />
               </FormControl>
               <FormDescription>
                 You will receive a call to finalise the order details.
@@ -121,7 +128,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Number of People</FormLabel>
               <FormControl>
-                <Input placeholder='' {...field} />
+                <Input {...field} />
               </FormControl>
               <FormDescription>
                 This is the number of people who would be eating the cake.
@@ -137,7 +144,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Dietary Requirements</FormLabel>
               <FormControl>
-                <Input placeholder='' {...field} />
+                <Input {...field} />
               </FormControl>
               <FormDescription>
                 Inform us about your allergies as well as dietary requirements/preferences.
@@ -153,7 +160,7 @@ export function BespokeCakesForm() {
             <FormItem>
               <FormLabel>Flavours</FormLabel>
               <FormControl>
-                <Input placeholder='' {...field} />
+                <Input {...field} />
               </FormControl>
               <FormDescription>
                 Let us know about your preferred flavours. This will need to be discussed again

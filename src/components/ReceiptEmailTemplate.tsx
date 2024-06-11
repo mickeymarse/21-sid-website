@@ -27,7 +27,7 @@ export const ReceiptEmail = ({
   numberPeople,
   diet,
   flavours,
-  dateOrder,
+  dateOrder = 'n/a',
 }: ReceiptEmailProps) => (
   <Html>
     <Head />
