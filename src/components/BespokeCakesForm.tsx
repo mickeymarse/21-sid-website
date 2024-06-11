@@ -21,7 +21,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
-import { receiptEmail } from '@/app/api/send/route';
+import { receiptEmail } from '../mailer/receiptEmail';
 
 const formSchema = z.object({
   numberPeople: z

@@ -1,7 +1,7 @@
 'use server';
 
 import { Resend } from 'resend';
-import { KoalaWelcomeEmail } from '../../../components/EmailTemplate';
+import { KoalaWelcomeEmail } from '../components/EmailTemplate';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
