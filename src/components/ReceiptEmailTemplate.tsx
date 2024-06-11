@@ -1,6 +1,5 @@
 import {
   Body,
-  Button,
   Container,
   Head,
   Hr,
@@ -10,39 +9,52 @@ import {
   Section,
   Text,
 } from '@react-email/components';
-//import * as React from 'react';
 
-interface KoalaWelcomeEmailProps {
-  //   numberPeople: string;
-  //   diet: string;
-  //   flavours: string;
+interface ReceiptEmailProps {
+  numberPeople: string;
+  diet: string;
+  flavours: string | undefined;
   //   phoneNumber: string;
   clientName: string;
   //   emailAddress: string;
-  //   dateOrder: Date;
+  dateOrder: string | undefined;
 }
 
-const baseUrl = 'https://react-email-demo-48zvx380u-resend.vercel.app/';
+const imgLogo = process.env.LOGO_LINK;
 
-export const KoalaWelcomeEmail = ({ clientName }: KoalaWelcomeEmailProps) => (
+export const ReceiptEmail = ({
+  clientName,
+  numberPeople,
+  diet,
+  flavours,
+  dateOrder,
+}: ReceiptEmailProps) => (
   <Html>
     <Head />
     <Preview>The sales intelligence platform that helps you uncover qualified leads.</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Img
-          src={`${baseUrl}/static/koala-logo.png`}
-          width='170'
-          height='50'
-          alt='Koala'
-          style={logo}
-        />
+        <Img src={imgLogo} width='190' height='150' alt='21 Sid logo' style={logo} />
         <Text style={paragraph}>Hi {clientName},</Text>
         <Text style={paragraph}>Your order has been received!</Text>
-        <Section style={btnContainer}>
-          <Button style={button} href='https://getkoala.com'>
-            Get started
-          </Button>
+        <Section style={container}>
+          <Text style={paragraph}>
+            Recap of your order:
+            <ul>
+              <li>
+                <strong>Number of people</strong> - {numberPeople}
+              </li>
+              <li>
+                <strong>Dietary requirements</strong> - {diet}
+              </li>
+              <li>
+                <strong>Flavour preferences</strong> - {flavours}
+              </li>
+              <li>
+                <strong>Collection date</strong> - {dateOrder?.slice(0, 16)}
+              </li>
+            </ul>
+          </Text>
         </Section>
         <Text style={paragraph}>
           Best,
@@ -50,22 +62,23 @@ export const KoalaWelcomeEmail = ({ clientName }: KoalaWelcomeEmailProps) => (
           21 Sid
         </Text>
         <Hr style={hr} />
-        <Text style={footer}>470 Noor Ave STE B #1148, South San Francisco, CA 94080</Text>
+        <Text style={footer}>21 Sidworth Street London, UK E8 3SD</Text>
       </Container>
     </Body>
   </Html>
 );
 
-KoalaWelcomeEmail.PreviewProps = {
-  //   numberPeople: 'n/a',
-  //   diet: 'n/a',
-  //   flavours: 'n/a',
+ReceiptEmail.PreviewProps = {
+  numberPeople: 'n/a',
+  diet: 'n/a',
+  flavours: 'n/a',
   //   phoneNumber: 'n/a',
   clientName: 'n/a',
   // emailAddress: 'n/a',
-} as KoalaWelcomeEmailProps;
+  dateOrder: 'n/a',
+} as ReceiptEmailProps;
 
-export default KoalaWelcomeEmail;
+export default ReceiptEmail;
 
 const main = {
   backgroundColor: '#ffffff',
@@ -85,21 +98,6 @@ const logo = {
 const paragraph = {
   fontSize: '16px',
   lineHeight: '26px',
-};
-
-const btnContainer = {
-  textAlign: 'center' as const,
-};
-
-const button = {
-  backgroundColor: '#5F51E8',
-  borderRadius: '3px',
-  color: '#fff',
-  fontSize: '16px',
-  textDecoration: 'none',
-  textAlign: 'center' as const,
-  display: 'block',
-  padding: '12px',
 };
 
 const hr = {

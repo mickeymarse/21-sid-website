@@ -55,7 +55,14 @@ export function BespokeCakesForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    receiptEmail(values.emailAddress, values.clientName);
+    receiptEmail(
+      values.emailAddress,
+      values.clientName,
+      values.numberPeople,
+      values.diet,
+      values.flavours,
+      values.dateOrder?.toString()
+    );
     console.log(values);
   }
 
