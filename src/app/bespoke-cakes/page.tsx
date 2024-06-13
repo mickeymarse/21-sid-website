@@ -1,4 +1,5 @@
 import { BespokeCakesForm } from '@/components/BespokeCakesForm';
+import Wrapper from '@/components/Wrapper';
 
 export default function BespokeCakes() {
   return (
@@ -8,7 +9,9 @@ export default function BespokeCakes() {
         Fill the form to place an order for a bespoke cake. Laura will contact to confirm all the
         details.
       </p>
-      <BespokeCakesForm />
+      <Wrapper>
+        <BespokeCakesForm />
+      </Wrapper>
     </section>
   );
 }
