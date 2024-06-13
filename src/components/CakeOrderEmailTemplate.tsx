@@ -10,37 +10,48 @@ import {
   Text,
 } from '@react-email/components';
 
-interface ReceiptEmailProps {
+interface CakeOrderEmailTemplateProps {
   numberPeople: string;
   diet: string;
   flavours: string | undefined;
-  //   phoneNumber: string;
+  phoneNumber: string;
   clientName: string;
-  //   emailAddress: string;
+  emailAddress: string;
   dateOrder: string | undefined;
 }
 
 const imgLogo = process.env.LOGO_LINK;
 
-export const ReceiptEmail = ({
+export const CakeOrderEmailTemplate = ({
   clientName,
   numberPeople,
+  phoneNumber,
+  emailAddress,
   diet,
   flavours,
   dateOrder = 'n/a',
-}: ReceiptEmailProps) => (
+}: CakeOrderEmailTemplateProps) => (
   <Html>
     <Head />
-    <Preview>Receipt of the cake order placed.</Preview>
+    <Preview>Details of the new cake order placed.</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img src={imgLogo} width='200' height='150' alt='21 Sid logo' style={logo} />
-        <Text style={paragraph}>Hi {clientName},</Text>
-        <Text style={paragraph}>Your order has been received!</Text>
+        <Text style={paragraph}>Hi Laura,</Text>
+        <Text style={paragraph}>A new cake order has been placed!</Text>
         <Section style={container}>
           <Text style={paragraph}>
-            Recap of your order:
+            Details of the order:
             <ul>
+              <li>
+                <strong>Customer name and details</strong> - {clientName}
+              </li>
+              <li>
+                <strong>Phone number</strong> - {phoneNumber}
+              </li>
+              <li>
+                <strong>Email address</strong> - {emailAddress}
+              </li>
               <li>
                 <strong>Number of people</strong> - {numberPeople}
               </li>
@@ -59,7 +70,7 @@ export const ReceiptEmail = ({
         <Text style={paragraph}>
           Best,
           <br />
-          21 Sid
+          The Bespoke Cakes Form
         </Text>
         <Hr style={hr} />
         <Text style={footer}>21 Sidworth Street London, UK E8 3SD</Text>
@@ -68,17 +79,17 @@ export const ReceiptEmail = ({
   </Html>
 );
 
-ReceiptEmail.PreviewProps = {
+CakeOrderEmailTemplate.PreviewProps = {
   numberPeople: 'n/a',
   diet: 'n/a',
   flavours: 'n/a',
-  //   phoneNumber: 'n/a',
+  phoneNumber: 'n/a',
   clientName: 'n/a',
-  // emailAddress: 'n/a',
+  emailAddress: 'n/a',
   dateOrder: 'n/a',
-} as ReceiptEmailProps;
+} as CakeOrderEmailTemplateProps;
 
-export default ReceiptEmail;
+export default CakeOrderEmailTemplate;
 
 const main = {
   backgroundColor: '#ffffff',

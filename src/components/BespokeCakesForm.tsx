@@ -22,6 +22,7 @@ import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 import { receiptEmail } from '../mailer/receiptEmail';
+import { cakeOrderEmail } from '@/mailer/cakeOrderEmail';
 
 const formSchema = z.object({
   numberPeople: z
@@ -66,6 +67,15 @@ export function BespokeCakesForm() {
     receiptEmail(
       values.emailAddress,
       values.clientName,
+      values.numberPeople,
+      values.diet,
+      values.flavours,
+      values.dateOrder?.toString()
+    );
+    cakeOrderEmail(
+      values.emailAddress,
+      values.clientName,
+      values.phoneNumber,
       values.numberPeople,
       values.diet,
       values.flavours,
