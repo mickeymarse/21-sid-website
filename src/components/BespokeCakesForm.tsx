@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { CalendarIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -25,8 +25,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-  DialogClose,
 } from '@/components/ui/dialog';
 
 import { Input } from '@/components/ui/input';
@@ -76,6 +74,22 @@ export function BespokeCakesForm() {
 
   const { reset } = form;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset === 0) {
+        setIsDialogOpen(true);
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     receiptEmail(
       values.emailAddress,
@@ -97,24 +111,25 @@ export function BespokeCakesForm() {
     console.log(values);
     reset();
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setIsDialogOpen(true);
   }
 
   return (
     <>
       {isDialogOpen && (
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          {/* <DialogTrigger>Open</DialogTrigger> */}
-          <DialogContent className='bg-lime-100 rounded-3xl'>
+          <DialogContent className='bg-lime-100 rounded-full border-double border-2 border-lime-500 h-fit w-full ring-2 ring-lime-500'>
             <DialogHeader>
-              <DialogTitle className=' text-2xl'>Your order has been sent!</DialogTitle>
-              <DialogDescription className='text-lg'>
-                Soon you will receive an email of confirmation with the details of your order. After
-                that, Laura will contact you via phone to finalise the details.
+              <DialogTitle className='text-3xl text-center'>{`\uD83D\uDC9A Your order has been sent! \uD83D\uDC9A`}</DialogTitle>
+              <DialogDescription className='text-xl'>
+                <br />
+                <p>
+                  Soon you will receive an email of confirmation with the details of your order.
+                </p>
+                <br />
+                <p>After that, Laura will contact you via phone to finalise the details.</p>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
-          {/* <DialogClose>Close</DialogClose> */}
         </Dialog>
       )}
       <Form {...form}>
