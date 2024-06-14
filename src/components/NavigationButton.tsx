@@ -11,8 +11,8 @@ interface NavigationButton {
 const NavigationButton: React.FC<NavigationButton> = ({ href, page, color }) => {
 
   const colorVariants = {
-    green: 'hover:bg-green_sid/80',
-    pink: 'hover:bg-pink_sid/80',
+    green: 'hover:bg-green_sid/70',
+    pink: 'hover:bg-pink_sid/70',
   }
 
   return (

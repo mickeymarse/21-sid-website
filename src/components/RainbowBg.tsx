@@ -4,7 +4,7 @@ export default function RainbowBg() {
   return (
     <>
       {/* left */}
-      <div className="hidden sm:block">
+      <div className="hidden lg:block">
         <div className=" rainbow_pink top-0 left-10"></div>
         <div className=" rainbow_green top-[45rem] left-10"></div>
         <div className=" rainbow_pink top-[85rem] left-10"></div>
