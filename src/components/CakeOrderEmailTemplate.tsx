@@ -44,7 +44,7 @@ export const CakeOrderEmailTemplate = ({
             Details of the order:
             <ul>
               <li>
-                <strong>Customer name and details</strong> - {clientName}
+                <strong>Customer name</strong> - {clientName}
               </li>
               <li>
                 <strong>Phone number</strong> - {phoneNumber}
