@@ -10,48 +10,36 @@ import {
   Text,
 } from '@react-email/components';
 
-interface ReceiptEmailProps {
-  numberPeople: string;
-  diet: string;
-  flavours: string | undefined;
-  //   phoneNumber: string;
+interface TarotBookingReceiptEmailTemplateProps {
+  enquiryType: string | undefined;
   clientName: string;
-  //   emailAddress: string;
   dateOrder: string | undefined;
 }
 
 const imgLogo = process.env.LOGO_LINK;
 
-export const ReceiptEmail = ({
+export const TarotBookingReceiptEmailTemplate = ({
   clientName,
-  numberPeople,
-  diet,
-  flavours,
+  enquiryType,
   dateOrder = 'n/a',
-}: ReceiptEmailProps) => (
+}: TarotBookingReceiptEmailTemplateProps) => (
   <Html>
     <Head />
-    <Preview>Receipt of the cake order placed.</Preview>
+    <Preview>Receipt of the Tarot reading requested.</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img src={imgLogo} width='200' height='150' alt='21 Sid logo' style={logo} />
         <Text style={paragraph}>Hi {clientName},</Text>
-        <Text style={paragraph}>Your order has been received!</Text>
+        <Text style={paragraph}>Your booking request has been received!</Text>
         <Section style={container}>
           <Text style={paragraph}>
-            Recap of your order:
+            Recap of your Tarot enquiry:
             <ul>
               <li>
-                <strong>Number of people</strong> - {numberPeople}
+                <strong>Type of enquiry</strong> - {enquiryType}
               </li>
               <li>
-                <strong>Dietary requirements</strong> - {diet}
-              </li>
-              <li>
-                <strong>Flavour preferences</strong> - {flavours}
-              </li>
-              <li>
-                <strong>Collection date</strong> - {dateOrder?.slice(0, 16)}
+                <strong>Preferred date</strong> - {dateOrder?.slice(0, 16)}
               </li>
             </ul>
           </Text>
@@ -68,17 +56,13 @@ export const ReceiptEmail = ({
   </Html>
 );
 
-ReceiptEmail.PreviewProps = {
-  numberPeople: 'n/a',
-  diet: 'n/a',
-  flavours: 'n/a',
-  //   phoneNumber: 'n/a',
+TarotBookingReceiptEmailTemplate.PreviewProps = {
+  enquiryType: 'n/a',
   clientName: 'n/a',
-  // emailAddress: 'n/a',
   dateOrder: 'n/a',
-} as ReceiptEmailProps;
+} as TarotBookingReceiptEmailTemplateProps;
 
-export default ReceiptEmail;
+export default TarotBookingReceiptEmailTemplate;
 
 const main = {
   backgroundColor: '#ffffff',

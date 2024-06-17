@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { CalendarIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -30,19 +30,11 @@ import {
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
-import { cakeOrderReceiptEmail } from '../mailer/cakeOrderReceiptEmail';
-import { cakeOrderEmail } from '@/mailer/cakeOrderEmail';
+import { tarotBookingReceiptEmail } from '../mailer/tarotBookingReceiptEmail';
+import { tarotBookingEmail } from '@/mailer/tarotBookingEmail';
 
 const formSchema = z.object({
-  numberPeople: z
-    .string({ required_error: 'A number of people is required' })
-    .min(1, { message: `How many people are going to eat this cake?` })
-    .max(2),
-  diet: z
-    .string({ required_error: 'Dietary restrictions are required' })
-    .min(3, { message: `Insert N/A if you don't have any dietary requirements.` })
-    .max(250),
-  flavours: z.string().max(250).optional(),
+  enquiryType: z.string().max(50).optional(),
   phoneNumber: z
     .string({ required_error: 'A phone number is required' })
     .min(11, { message: `Please, insert your number.` })
@@ -54,18 +46,16 @@ const formSchema = z.object({
   emailAddress: z
     .string({ required_error: 'An email address is required' })
     .email({ message: `Check the email format is correct.` }),
-  dateOrder: z.date().optional(),
+  dateOrder: z.date(),
 });
 
-export function BespokeCakesForm() {
+export function TarotReadingsForm() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      numberPeople: '',
-      diet: '',
-      flavours: '',
+      enquiryType: '',
       phoneNumber: '',
       clientName: '',
       emailAddress: '',
@@ -75,21 +65,17 @@ export function BespokeCakesForm() {
   const { reset } = form;
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    cakeOrderReceiptEmail(
+    tarotBookingReceiptEmail(
       values.emailAddress,
       values.clientName,
-      values.numberPeople,
-      values.diet,
-      values.flavours,
+      values.enquiryType,
       values.dateOrder?.toString()
     );
-    cakeOrderEmail(
+    tarotBookingEmail(
       values.emailAddress,
       values.clientName,
       values.phoneNumber,
-      values.numberPeople,
-      values.diet,
-      values.flavours,
+      values.enquiryType,
       values.dateOrder?.toString()
     );
     console.log(values);
@@ -102,13 +88,13 @@ export function BespokeCakesForm() {
     <>
       {isDialogOpen && (
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className='bg-lime-100 rounded-full border-double border-2 border-lime-500 h-fit w-full ring-2 ring-lime-500'>
+          <DialogContent className='bg-red-100 rounded-full border-double border-2 border-red-300 h-fit w-full ring-2 ring-red-300'>
             <DialogHeader>
-              <DialogTitle className='text-3xl text-center'>{`\uD83D\uDC9A Your order has been sent! \uD83D\uDC9A`}</DialogTitle>
+              <DialogTitle className='text-2xl text-center'>{`\uD83E\uDE77 Your request has been sent! \uD83E\uDE77`}</DialogTitle>
               <DialogDescription className='text-xl'>
                 <br />
                 <p>
-                  Soon you will receive an email of confirmation with the details of your order.
+                  Soon you will receive an email of confirmation with the details of your request.
                 </p>
                 <br />
                 <p>After that, Laura will contact you via phone to finalise the details.</p>
@@ -163,48 +149,15 @@ export function BespokeCakesForm() {
           />
           <FormField
             control={form.control}
-            name='numberPeople'
+            name='enquiryType'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Number of People</FormLabel>
+                <FormLabel>Type of enquiry</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                  This is the number of people who would be eating the cake.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='diet'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Dietary Requirements</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormDescription>
-                  Inform us about your allergies as well as dietary requirements/preferences.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='flavours'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Flavours</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormDescription>
-                  Let us know about your preferred flavours. This will need to be discussed again
-                  later on.
+                  Feel free to share the kind of reading you're looking for.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -241,16 +194,14 @@ export function BespokeCakesForm() {
                     />
                   </PopoverContent>
                 </Popover>
-                <FormDescription>
-                  When would you like to collect your delicious cake?
-                </FormDescription>
+                <FormDescription>When would you like your reading to be?</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
           <Button
             type='submit'
-            className='place-self-end rounded-xl bg-[#fcc7f9] hover:bg-[#c7fcc7]'
+            className='place-self-end rounded-xl bg-[#c7fcc7] hover:bg-[#fcc7f9]'
           >
             Submit
           </Button>

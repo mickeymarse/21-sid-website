@@ -9,7 +9,7 @@ export default function BespokeCakes() {
         Fill the form to place an order for a bespoke cake. Laura will contact to confirm all the
         details.
       </p>
-      <Wrapper>
+      <Wrapper background='bg-red-100'>
         <BespokeCakesForm />
       </Wrapper>
     </section>
