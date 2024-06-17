@@ -1,7 +1,7 @@
 'use server';
 
 import { Resend } from 'resend';
-import { ReceiptEmail } from '../components/ReceiptEmailTemplate';
+import { ReceiptEmail } from '../components/cakeOrderReceiptEmailTemplate';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const domain = process.env.MAIL_DOMAIN;
