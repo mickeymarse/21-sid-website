@@ -157,7 +157,7 @@ export function TarotReadingsForm() {
                   <Input {...field} />
                 </FormControl>
                 <FormDescription>
-                  Feel free to share the kind of reading you're looking for.
+                  Feel free to share the kind of reading you are looking for.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
