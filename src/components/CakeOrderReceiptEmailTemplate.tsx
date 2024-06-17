@@ -14,9 +14,7 @@ interface CakeOrderReceiptEmailTemplateProps {
   numberPeople: string;
   diet: string;
   flavours: string | undefined;
-  //   phoneNumber: string;
   clientName: string;
-  //   emailAddress: string;
   dateOrder: string | undefined;
 }
 
@@ -72,9 +70,7 @@ CakeOrderReceiptEmailTemplate.PreviewProps = {
   numberPeople: 'n/a',
   diet: 'n/a',
   flavours: 'n/a',
-  //   phoneNumber: 'n/a',
   clientName: 'n/a',
-  // emailAddress: 'n/a',
   dateOrder: 'n/a',
 } as CakeOrderReceiptEmailTemplateProps;
 
