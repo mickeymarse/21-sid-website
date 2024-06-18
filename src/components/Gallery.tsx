@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Gallery() {
   return (
-    <div className="grid grid-cols-2 gap-4 -pt-8">
+    <div className="grid grid-cols-2 gap-4 p-8 -pt-16">
       <div className="grid gap-4">
         <div>
           <Image
