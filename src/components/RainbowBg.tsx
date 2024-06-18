@@ -8,8 +8,10 @@ interface RainbowBgProps {
 }
 
 export default function RainbowBg({ children }: RainbowBgProps) {
-  const [contentHeight, setContentHeight] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const [contentHeight, setContentHeight] = useState(0);
+
   const pathname = usePathname();
 
   useEffect(() => {
@@ -26,12 +28,15 @@ export default function RainbowBg({ children }: RainbowBgProps) {
       <div className="hidden lg:block">
         {contentHeight > 0 && (
           <>
-            <div className="rainbow_pink absolute top-0 left-10"></div>
+            <div className="rainbow_pink   top-0 left-0"></div>
             {contentHeight > 720 && (
-              <div className="rainbow_green absolute top-[45rem] left-10"></div>
+              <div className="rainbow_green  top-[45rem] left-0"></div>
             )}
             {contentHeight > 1360 && (
-              <div className="rainbow_pink absolute top-[85rem] left-10"></div>
+              <>
+              <div className="rainbow_pink  top-[85rem] left-0"></div>
+              <div className="rainbow_green  top-[120rem] left-0  "></div>
+              </>
             )}
           </>
         )}
@@ -41,15 +46,15 @@ export default function RainbowBg({ children }: RainbowBgProps) {
       <div className="block">
         {contentHeight > 0 && (
           <>
-            <div className="rainbow_green absolute top-0 lg:right-10"></div>
+            <div className="rainbow_green  top-0 right-1/12  lg:right-0"></div>
             {contentHeight > 560 && (
-              <div className="rainbow_pink absolute top-[35rem] top-[40rem] lg:right-10"></div>
+              <div className="rainbow_pink  top-[35rem] lg:top-[40rem] right-1/12  lg:right-0"></div>
             )}
             {contentHeight > 960 && (
-              <div className="rainbow_green absolute top-[60rem] top-[80rem] lg:right-10"></div>
+              <div className="rainbow_green top-[60rem] lg:top-[80rem] right-1/12  lg:right-0"></div>
             )}
             {contentHeight > 1360 && (
-              <div className="rainbow_pink absolute top-[90rem] top-[120rem] lg:right-10"></div>
+              <div className="rainbow_pink  top-[90rem] lg:top-[120rem] right-1/12  lg:right-0"></div>
             )}
           </>
         )}
