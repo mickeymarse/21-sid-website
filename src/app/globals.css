@@ -21,11 +21,11 @@ body {
 
 
   .rainbow_green{
-    @apply bg-green_sid opacity-35 w-5/6 lg:w-1/2 h-1/5 min-h-[25rem] absolute -z-10  rounded-full blur-[8rem]
+    @apply bg-green_sid opacity-35 w-full lg:w-1/2 h-1/6  absolute -z-10  rounded-full blur-[8rem]
   }
-  /* b5ff66 h-[25rem] w-[50rem]*/
+  /* b5ff66 h-[25rem] w-[50rem] min-h-[20rem]*/
   .rainbow_pink{
-    @apply bg-pink_sid opacity-35 w-5/6 lg:w-1/2 h-1/5 min-h-[25rem] absolute -z-10  rounded-full blur-[10rem]
+    @apply bg-pink_sid opacity-25 lg:opacity-35 w-full lg:w-1/2 h-1/6  absolute -z-10  rounded-full blur-[10rem]
   }
   /* f66ef8 h-[25rem] w-[50rem] */
 

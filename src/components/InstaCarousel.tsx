@@ -57,11 +57,10 @@ export default function InstaCarousel() {
       <CarouselContent className="-ml-1">
         {images.map((image) => (
           <CarouselItem key={image.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card className="border-none">
-                <CardContent className="flex items-center justify-center p-6">
+              <Card className="">
+                <CardContent className="flex items-center justify-center m-6">
                   <Image
-                    className="h-auto max-w-full rounded-xl drop-shadow-xl"
+                    className="h-auto max-w-full rounded-xl "
                     src={image.download_url}
                     alt=""
                     width={500}
@@ -69,7 +68,6 @@ export default function InstaCarousel() {
                   />
                 </CardContent>
               </Card>
-            </div>
           </CarouselItem>
         ))}
       </CarouselContent>
