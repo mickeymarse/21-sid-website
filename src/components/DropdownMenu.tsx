@@ -56,6 +56,7 @@ const Dropdown = () => {
                   <Link
                     className="text-lg text-slate-900 font-normal relative  line-gradient-green"
                     href="/"
+                    onClick={handleToggleDropdown}
                   >
                     Home
                   </Link>
@@ -67,6 +68,7 @@ const Dropdown = () => {
                     <Link
                       className="text-lg text-slate-900 font-normal relative  line-gradient-pink"
                       href="/bespoke-cakes"
+                      onClick={handleToggleDropdown}
                     >
                       Bespoke Cakes
                     </Link>
@@ -79,6 +81,7 @@ const Dropdown = () => {
                     <Link
                       className="text-lg text-slate-900 font-normal relative  line-gradient-green"
                       href="/tarot-readings"
+                      onClick={handleToggleDropdown}
                     >
                       Tarot Readings
                     </Link>
@@ -90,6 +93,7 @@ const Dropdown = () => {
                   <Link
                     className="text-lg text-slate-900 font-normal relative   line-gradient-pink"
                     href="/about-us"
+                    onClick={handleToggleDropdown}
                   >
                     About us
                   </Link>
@@ -100,6 +104,7 @@ const Dropdown = () => {
                   <Link
                     className="text-lg text-slate-900 font-normal relative   line-gradient-green"
                     href="/contacts"
+                    onClick={handleToggleDropdown}
                   >
                     Contact
                   </Link>
