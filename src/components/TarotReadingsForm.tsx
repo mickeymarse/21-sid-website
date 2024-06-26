@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { format } from 'date-fns';
+import { format, isToday } from 'date-fns';
 import { CalendarIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -88,10 +88,10 @@ export function TarotReadingsForm() {
     <>
       {isDialogOpen && (
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className='bg-red-100 rounded-full border-double border-2 border-red-300 h-fit w-full ring-2 ring-red-300'>
+          <DialogContent className='bg-red-100 border-double border-2 border-red-300 h-fit w-full ring-2 ring-red-300'>
             <DialogHeader>
-              <DialogTitle className='text-2xl text-center'>{`\uD83E\uDE77 Your request has been sent! \uD83E\uDE77`}</DialogTitle>
-              <DialogDescription className='text-xl'>
+              <DialogTitle className='text-xl md:text-2xl text-center'>{`\uD83E\uDE77 Your request has been sent! \uD83E\uDE77`}</DialogTitle>
+              <DialogDescription className='text-lg md:text-xl'>
                 <br />
                 <p>
                   Soon you will receive an email of confirmation with the details of your request.
@@ -168,7 +168,7 @@ export function TarotReadingsForm() {
             name='dateOrder'
             render={({ field }) => (
               <FormItem className='flex flex-col'>
-                <FormLabel>Collection Date</FormLabel>
+                <FormLabel>Preferred Date</FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
@@ -189,7 +189,7 @@ export function TarotReadingsForm() {
                       mode='single'
                       selected={field.value}
                       onSelect={field.onChange}
-                      disabled={(date) => date < new Date()}
+                      disabled={(date) => date < new Date() || date.getDay() != 4}
                       initialFocus
                     />
                   </PopoverContent>

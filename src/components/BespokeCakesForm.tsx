@@ -102,10 +102,10 @@ export function BespokeCakesForm() {
     <>
       {isDialogOpen && (
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className='bg-lime-100 rounded-full border-double border-2 border-lime-500 h-fit w-full ring-2 ring-lime-500'>
+          <DialogContent className='bg-lime-100 border-double border-2 border-lime-500 h-fit w-full ring-2 ring-lime-500'>
             <DialogHeader>
-              <DialogTitle className='text-3xl text-center'>{`\uD83D\uDC9A Your order has been sent! \uD83D\uDC9A`}</DialogTitle>
-              <DialogDescription className='text-xl'>
+              <DialogTitle className='text-xl md:text-2xl text-center'>{`\uD83D\uDC9A Your order has been sent! \uD83D\uDC9A`}</DialogTitle>
+              <DialogDescription className='text-lg md:text-xl'>
                 <br />
                 <p>
                   Soon you will receive an email of confirmation with the details of your order.
