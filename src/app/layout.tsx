@@ -22,11 +22,12 @@ export default function RootLayout({
   return (
     <html lang='en' className='!scroll-smooth'>
       <body className='bg-gray-50 text-gray-950'>
-        <RainbowBg />
+        <RainbowBg >
         <Navbar />
         <Header />
 
         {children}
+        </RainbowBg>
         <Footer />
       </body>
     </html>

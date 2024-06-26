@@ -1,4 +1,6 @@
+
 import Gallery from '@/components/Gallery';
+import InstaCarousel from "@/components/InstaCarousel";
 
 export default function Home() {
   return (
@@ -8,7 +10,9 @@ export default function Home() {
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris nisi ut aliquip ex ea commodo consequat.
       </p>
+
       <Gallery />
+      <InstaCarousel />
     </main>
   );
 }
