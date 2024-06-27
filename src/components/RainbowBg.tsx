@@ -28,34 +28,63 @@ export default function RainbowBg({ children }: RainbowBgProps) {
       <div className="hidden lg:block">
         {contentHeight > 0 && (
           <>
-            <div className="rainbow_pink   top-0 left-0"></div>
-            {contentHeight > 560 && (
-              <div className="rainbow_green  top-[45rem] left-0"></div>
+            <div className="rainbow_pink top-0 left-0"></div>
+            {contentHeight > 380 && (
+              <div className="rainbow_green top-[30rem] left-0"></div>
             )}
-            {contentHeight > 1400 && (
-              <div className="rainbow_pink  top-[85rem] left-0"></div>
+            {contentHeight > 860 && (
+              <div className="rainbow_pink top-[60rem] left-0"></div>
             )}
-            {contentHeight > 1900 && (
-              <div className="rainbow_green  top-[125rem] left-0  "></div>
+            {contentHeight > 1540 && (
+              <div className="rainbow_green top-[90rem] left-0  "></div>
             )}
+            {contentHeight > 2020 && (
+              <div className="rainbow_pink top-[120rem] left-0  "></div>
+            )}
+            
           </>
         )}
       </div>
 
       {/* right */}
-      <div className="block">
+      <div className="hidden lg:block">
+        {contentHeight > 0 && (
+                    <>
+                    <div className="rainbow_green top-0 right-0"></div>
+                    {contentHeight > 380 && (
+                      <div className="rainbow_pink top-[30rem] right-0"></div>
+                    )}
+                    {contentHeight > 860 && (
+                      <div className="rainbow_green top-[60rem] right-0"></div>
+                    )}
+                    {contentHeight > 1540 && (
+                      <div className="rainbow_pink top-[90rem] right-0  "></div>
+                    )}
+                    {contentHeight > 2020 && (
+                      <div className="rainbow_green top-[120rem] right-0  "></div>
+                    )}
+                    
+                  </>
+        )}
+      </div>
+
+      {/* small screen */}
+      <div className="block lg:hidden">
         {contentHeight > 0 && (
           <>
-            <div className="rainbow_green  top-0 right-1/12  lg:right-0"></div>
-            {contentHeight > 560 && (
-              <div className="rainbow_pink  top-[35rem] lg:top-[40rem] right-1/12  lg:right-0"></div>
+            <div className="rainbow_green  top-0 right-1/12"></div>
+            {contentHeight > 380 && (
+              <div className="rainbow_pink  top-[30rem] right-1/12 "></div>
             )}
-            {contentHeight > 1400 && (
-              <div className="rainbow_green top-[60rem] lg:top-[80rem] right-1/12  lg:right-0"></div>
+            {contentHeight > 860 && (
+              <div className="rainbow_green top-[60rem] right-1/12 "></div>
             )}
-            {contentHeight > 1900 && (
-              <div className="rainbow_pink  top-[90rem] lg:top-[120rem] right-1/12  lg:right-0"></div>
+            {contentHeight > 1540 && (
+              <div className="rainbow_pink  top-[90rem] right-1/12 "></div>
             )}
+            {contentHeight > 2020 && (
+                      <div className="rainbow_green top-[120rem] right-1/12  "></div>
+                    )}
           </>
         )}
       </div>
