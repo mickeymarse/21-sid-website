@@ -6,7 +6,7 @@ const Contacts = () => {
     <>
       <h3 className='text-center text-3xl mt-10 font-bold'>Contacts</h3>
       <section className='flex flex-col-reverse md:flex-row justify-center gap-24 my-12'>
-        <article className='flex flex-col gap-10'>
+        <article className='flex flex-col gap-10 place-self-center'>
           <span className=''>
             <h3 className='contacts-h3'>Opening Hours</h3>
             <p className='contacts-p'>{`Mon - Fri: 8am - 6pm\nSat: 9am - 6pm\nSun: 10am - 4pm`}</p>
