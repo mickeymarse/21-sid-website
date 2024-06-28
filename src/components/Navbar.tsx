@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   return (
     <div className='mb-4'>
       {/* Larger screens */}
-      <nav className='sticky top-0 hidden lg:flex items-center justify-between flex-wrap  py-2 px-8 w-full h-21  border-b border-gray-200 '>
+      <nav className='sticky top-0 hidden lg:flex items-center justify-between flex-wrap  py-2 px-8 w-full h-21'>
       {/* bg-[#f2f2f2]/80 */}
         <div className='w-40'>
           <Avatar className='h-14 w-14 border border-slate-700'>
