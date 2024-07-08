@@ -46,7 +46,7 @@ const formSchema = z.object({
   phoneNumber: z
     .string({ required_error: 'A phone number is required' })
     .min(11, { message: `Please, insert your number.` })
-    .max(14),
+    .max(15),
   clientName: z
     .string({ required_error: 'A name is required' })
     .min(2, { message: `Please, insert a name.` })
@@ -102,7 +102,7 @@ export function BespokeCakesForm() {
     <>
       {isDialogOpen && (
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className='bg-lime-100 border-double border-2 border-lime-500 h-fit w-full ring-2 ring-lime-500'>
+          <DialogContent className='bg-lime-100 border-double rounded-lg border-2 border-lime-500 h-fit w-full ring-2 ring-lime-500'>
             <DialogHeader>
               <DialogTitle className='text-xl md:text-2xl text-center'>{`\uD83D\uDC9A Your order has been sent! \uD83D\uDC9A`}</DialogTitle>
               <DialogDescription className='text-lg md:text-xl'>

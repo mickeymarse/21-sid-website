@@ -38,7 +38,7 @@ const formSchema = z.object({
   phoneNumber: z
     .string({ required_error: 'A phone number is required' })
     .min(11, { message: `Please, insert your number.` })
-    .max(14),
+    .max(15),
   clientName: z
     .string({ required_error: 'A name is required' })
     .min(2, { message: `Please, insert a name.` })
@@ -88,7 +88,7 @@ export function TarotReadingsForm() {
     <>
       {isDialogOpen && (
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className='bg-red-100 border-double border-2 border-red-300 h-fit w-full ring-2 ring-red-300'>
+          <DialogContent className='bg-red-100 border-double rounded-lg border-2 border-red-300 h-fit w-full ring-2 ring-red-300'>
             <DialogHeader>
               <DialogTitle className='text-xl md:text-2xl text-center'>{`\uD83E\uDE77 Your request has been sent! \uD83E\uDE77`}</DialogTitle>
               <DialogDescription className='text-lg md:text-xl'>
@@ -189,7 +189,7 @@ export function TarotReadingsForm() {
                       mode='single'
                       selected={field.value}
                       onSelect={field.onChange}
-                      disabled={(date) => date < new Date() || date.getDay() != 4}
+                      disabled={(date) => date < new Date()}
                       initialFocus
                     />
                   </PopoverContent>
