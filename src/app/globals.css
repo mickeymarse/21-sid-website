@@ -17,6 +17,9 @@ body {
   }
 }
 
+.rainbow_white {
+  @apply bg-white opacity-35 w-full lg:w-1/2 h-[25rem] absolute -z-10  rounded-full blur-[8rem];
+}
 .rainbow_green {
   @apply bg-green_sid opacity-35 w-full lg:w-1/2 h-[25rem] absolute -z-10  rounded-full blur-[8rem];
 }
