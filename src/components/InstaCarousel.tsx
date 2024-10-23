@@ -1,73 +1,58 @@
-"use client";
-
-import * as React from "react";
-import Image from "next/image";
-import axios from "axios";
-import { Card, CardContent } from "@/components/ui/card";
+import Image from 'next/image';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+} from '@/components/ui/carousel';
 
-// Define the Image interface
 interface ImageData {
   id: string;
   download_url: string;
 }
 
-export default function InstaCarousel() {
-  const [images, setImages] = React.useState<ImageData[]>([]);
+async function getImages() {
+  const response = await fetch('https://picsum.photos/v2/list?page=1&limit=5', {
+    next: {
+      revalidate: 3600,
+    },
+  });
 
-  // Fetch data from the API
-  const fetchData = async () => {
-    try {
-      const response = await axios.get<ImageData[]>(
-        "https://picsum.photos/v2/list?page=1&limit=5"
-      );
-      setImages(response.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
 
-  // Fetch data when the component mounts
-  React.useEffect(() => {
-    fetchData();
-  }, []);
+  return response.json();
+}
 
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  );
+export default async function InstaCarousel() {
+  const images: ImageData[] = await getImages();
 
   return (
     <Carousel
       opts={{
-        align: "start",
+        align: 'start',
         loop: true,
       }}
-      plugins={[plugin.current]}
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-      className="w-[60%] sm:w-[80%]"
+      className='w-[60%] sm:w-[80%]'
     >
-      <CarouselContent className="-ml-1">
+      <CarouselContent className='-ml-1'>
         {images.map((image) => (
-          <CarouselItem key={image.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <Card className="">
-                <CardContent className="flex items-center justify-center m-6">
-                  <Image
-                    className="h-auto max-w-full rounded-xl "
-                    src={image.download_url}
-                    alt=""
-                    width={500}
-                    height={500}
-                  />
-                </CardContent>
-              </Card>
+          <CarouselItem key={image.id} className='pl-1 md:basis-1/2 lg:basis-1/3'>
+            <Card>
+              <CardContent className='flex items-center justify-center m-6'>
+                <Image
+                  className='h-auto max-w-full rounded-xl'
+                  src={image.download_url}
+                  alt='Carousel image'
+                  width={500}
+                  height={500}
+                  priority={true}
+                />
+              </CardContent>
+            </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
