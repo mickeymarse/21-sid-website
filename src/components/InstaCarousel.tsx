@@ -22,7 +22,7 @@ export interface Data {
   permalink: string;
 }
 
-async function getImages(): Promise<ImageData> {
+export async function getStaticProps(): Promise<ImageData> {
   const response = await fetch(
     'https://graph.instagram.com/v20.0/17841407396810214/media?fields=id,caption,media_url,timestamp,media_type,permalink',
     {
@@ -43,7 +43,7 @@ async function getImages(): Promise<ImageData> {
 }
 
 export default async function InstaCarousel() {
-  const imagesData: ImageData = await getImages();
+  const imagesData: ImageData = await getStaticProps();
   const images: Data[] = imagesData.data;
 
   return (
