@@ -1,73 +1,93 @@
-"use client";
-
-import * as React from "react";
-import Image from "next/image";
-import axios from "axios";
-import { Card, CardContent } from "@/components/ui/card";
+import Image from 'next/image';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+} from '@/components/ui/carousel';
+import Link from 'next/link';
 
-// Define the Image interface
-interface ImageData {
-  id: string;
-  download_url: string;
+export interface ImageData {
+  data: Data[];
 }
 
-export default function InstaCarousel() {
-  const [images, setImages] = React.useState<ImageData[]>([]);
+export interface Data {
+  id: string;
+  caption: string;
+  media_url: string;
+  timestamp: string;
+  media_type: string;
+  permalink: string;
+}
 
-  // Fetch data from the API
-  const fetchData = async () => {
-    try {
-      const response = await axios.get<ImageData[]>(
-        "https://picsum.photos/v2/list?page=1&limit=5"
-      );
-      setImages(response.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
+export async function getStaticProps(): Promise<ImageData> {
+  const response = await fetch(
+    'https://graph.instagram.com/v20.0/17841407396810214/media?fields=id,caption,media_url,timestamp,media_type,permalink',
+    {
+      next: {
+        revalidate: 3600,
+      },
+      headers: {
+        Authorization: `Bearer ${process.env.INSTAGRAM_TOKEN}`,
+      },
     }
-  };
-
-  // Fetch data when the component mounts
-  React.useEffect(() => {
-    fetchData();
-  }, []);
-
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
   );
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  return response.json();
+}
+
+export default async function InstaCarousel() {
+  const imagesData: ImageData = await getStaticProps();
+  const images: Data[] = imagesData.data;
 
   return (
     <Carousel
       opts={{
-        align: "start",
+        align: 'start',
         loop: true,
       }}
-      plugins={[plugin.current]}
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-      className="w-[60%] sm:w-[80%]"
+      className='w-[60%] sm:w-[80%] mt-20'
     >
-      <CarouselContent className="-ml-1">
-        {images.map((image) => (
-          <CarouselItem key={image.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <Card className="">
-                <CardContent className="flex items-center justify-center m-6">
-                  <Image
-                    className="h-auto max-w-full rounded-xl "
-                    src={image.download_url}
-                    alt=""
-                    width={500}
-                    height={500}
-                  />
-                </CardContent>
-              </Card>
+      <CarouselContent className='-ml-1'>
+        {images.slice(0, 9).map((image) => (
+          <CarouselItem key={image.id} className='pl-1 md:basis-1/2 lg:basis-1/3'>
+            <Card>
+              <CardContent className='flex items-center justify-center m-6'>
+                <Link href={image.permalink} target='_blank' className='relative group'>
+                  {image.media_type !== 'VIDEO' ? (
+                    <article className='relative w-[300px] h-[300px] overflow-clip'>
+                      <Image
+                        className='rounded-xl transition-opacity duration-300 group-hover:opacity-50'
+                        src={image.media_url}
+                        alt='Carousel image from 21 Sid Instagram page'
+                        width='300'
+                        height='300'
+                        priority={true}
+                      />
+                    </article>
+                  ) : (
+                    <article className='relative w-[300px] h-[300px] overflow-clip'>
+                      <video
+                        src={image.media_url}
+                        width='300'
+                        height='300'
+                        title='Carousel image from 21 Sid Instagram page'
+                        className='rounded-xl transition-opacity duration-300 group-hover:opacity-50'
+                      ></video>
+                    </article>
+                  )}
+                  <p className='absolute inset-0 flex items-center justify-center text-white text-center font-bold text-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black bg-opacity-50 rounded-xl px-5'>
+                    {image.caption.substring(0, 150) + '...'}
+                  </p>
+                </Link>
+              </CardContent>
+            </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
