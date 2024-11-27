@@ -2,6 +2,8 @@
 import Gallery from '@/components/Gallery';
 import InstaCarousel from "@/components/InstaCarousel";
 
+
+
 export default function Home() {
   return (
     <main className='flex flex-col items-center justify-center py-[50px]'>
@@ -10,7 +12,7 @@ export default function Home() {
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris nisi ut aliquip ex ea commodo consequat.
       </p>
-
+      
       <Gallery />
       <InstaCarousel />
     </main>
