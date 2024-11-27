@@ -1,11 +1,10 @@
-import Link from 'next/link';
 import { defineQuery } from 'next-sanity';
 import { sanityFetch } from '@/sanity/live';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { client } from '@/sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 import Image from 'next/image';
-import { Key } from 'react';
+
 
 const PICTURES_QUERY = defineQuery(`*[
   _type == "picture"
@@ -22,6 +21,7 @@ export default async function Gallery() {
   const { data: pictures } = await sanityFetch({ query: PICTURES_QUERY });
 
   return (
+
     <ul className="grid grid-cols-1 gap-4 lg:grid-cols-3">
       {pictures.map((picture: any) => (
         <li className="p-4 rounded-lg" key={picture._id}>
