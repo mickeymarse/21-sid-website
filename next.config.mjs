@@ -2,15 +2,11 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'flowbite.s3.amazonaws.com',
-        port: '',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.cdninstagram.com',
-        port: '',
+      { protocol: "https", hostname: "cdn.sanity.io" },
+      { protocol: "https", hostname: "placehold.co" },
+      { protocol: "https",
+        hostname: "*.cdninstagram.com",
+        port: "",
       },
     ],
   },
