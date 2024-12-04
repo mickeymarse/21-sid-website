@@ -1,5 +1,5 @@
 
-import Gallery from '@/components/Gallery';
+//import Gallery from '@/components/Gallery';
 //import InstaCarousel from "@/components/InstaCarousel";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
         laboris nisi ut aliquip ex ea commodo consequat.
       </p>
 
-      <Gallery />
+      {/* <Gallery /> */}
       {/* <InstaCarousel /> */}
     </main>
   );
