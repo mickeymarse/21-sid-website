@@ -1,6 +1,6 @@
 
 import Gallery from '@/components/Gallery';
-import InstaCarousel from "@/components/InstaCarousel";
+//import InstaCarousel from "@/components/InstaCarousel";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       </p>
 
       <Gallery />
-      <InstaCarousel />
+      {/* <InstaCarousel /> */}
     </main>
   );
 }
