@@ -1,7 +1,7 @@
 
 import Gallery from '@/components/Gallery';
 import InstaCarousel from "@/components/InstaCarousel";
-import { getProjects } from "../sanity/sanity.utils"
+import { getProjects } from "../../sanity/sanity.utils"
 
 export default async function Home() {
 
@@ -15,9 +15,10 @@ export default async function Home() {
         laboris nisi ut aliquip ex ea commodo consequat.
       </p>
 
-        {projects.map((project) => (
-          <p key={project.id}>{project.name}</p>
-        ))}
+      {projects.map((project) => (
+          <p key={project._id}>{project.name}</p>
+  ))
+}
 
       <Gallery />
       <InstaCarousel />
