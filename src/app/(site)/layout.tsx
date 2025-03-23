@@ -1,13 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import RainbowBg from '../components/RainbowBg';
-import Navbar from '../components/Navbar';
-
-const inter = Inter({ subsets: ['latin'] });
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import RainbowBg from '../../components/RainbowBg';
+import Navbar from '../../components/Navbar';
 
 export const metadata: Metadata = {
   title: '21 SID',
