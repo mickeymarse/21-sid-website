@@ -22,7 +22,6 @@ export default async function Home() {
         value={homeIntro.Content}
         components={components}
       />
-
       <Gallery />
     </main>
   );

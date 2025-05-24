@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Image from 'next/image';
 
 export default function Footer() {
@@ -7,9 +5,10 @@ export default function Footer() {
     <footer className='bottom-0 w-full bg-gray-50 bg-opacity-40 shadow-inner px-16 py-8'>
       {/* Container for the entire footer content */}
       <div className='flex flex-col sm:flex-row justify-between items-center sm:items-start'>
-        {/* First article */}
+
+        {/* Name and Hygiene logo */}
         <article className='flex flex-col items-center m-5 mt-8 text-center'>
-          <p className='text-lg font-bold'>21 SID</p>
+          <p className='text-lg font-bold mb-10'>21 SID</p>
           <br />
           <Image
             src='/health-safety.png'
@@ -25,9 +24,9 @@ export default function Footer() {
           {`21 Sidworth Street\nLondon, UK\nE8 3SD`}
         </p>
 
-        {/* Second article */}
+        {/* Time and contacts */}
         <article className='flex flex-col items-center m-5 mt-8 text-center'>
-          <p className='whitespace-pre-wrap'>{`Mon - Fri: 8am - 6pm\nSat: 9am - 6pm\nSun: 10am - 4pm`}</p>
+          <p className='whitespace-pre-wrap mb-5'>{`Mon - Fri: 8am - 6pm\nSat: 9am - 6pm\nSun: 10am - 4pm`}</p>
           <br />
           <p className='whitespace-pre-wrap'>{`+447777777777\nexample@email.com`}</p>
         </article>

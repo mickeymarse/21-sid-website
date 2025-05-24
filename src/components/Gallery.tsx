@@ -1,68 +1,23 @@
-import React from "react";
 import Image from "next/image";
+import { getGalleryImages } from "@/sanity/sanity.utils";
 
+export default async function Gallery() {
+  const galleryImages = await getGalleryImages();
+  console.log(galleryImages);
 
-export default function Gallery() {
   return (
-    <div className="grid grid-cols-2 gap-4 p-8 -pt-16">
-      <div className="grid gap-4">
-        <div>
+    <article className="grid grid-cols-2 gap-4 p-8 -pt-16">
+      {galleryImages.map((image, idx) => (
+        <section key={image.slug} className="grid gap-4">
           <Image
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-            alt=""
+            className={`h-auto max-w-full rounded-lg ${idx % 2 != 0 ? "pt-6 ml-4" : ""}`}
+            src={image.imageUrl}
+            alt={image.imageAlt || ""}
             width={500}
             height={500}
           />
-        </div>
-        <div>
-          <Image
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
-            alt=""
-            width={500}
-            height={500}
-          />
-        </div>
-        <div>
-          <Image
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
-            alt=""
-            width={500}
-            height={500}
-          />
-        </div>
-      </div>
-      <div className="grid gap-4">
-        <div>
-          <Image
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
-            alt=""
-            width={500}
-            height={500}
-          />
-        </div>
-        <div>
-          <Image
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
-            alt=""
-            width={500}
-            height={500}
-          />
-        </div>
-        <div>
-          <Image
-            className="h-auto max-w-full rounded-lg"
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
-            alt=""
-            width={500}
-            height={500}
-          />
-        </div>
-      </div>
-    </div>
+        </section>
+      ))}
+    </article>
   );
 }

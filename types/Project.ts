@@ -4,6 +4,7 @@ import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 export type Project = {
   _id: string;
   _createdAt: Date;
+  _updatedAt: Date;
   name: string;
   slug: string;
   image: SanityImageSource;
@@ -12,6 +13,11 @@ export type Project = {
 };
 
 export type ProjectImage = {
+  _id: string;
+  _createdAt: Date;
+  _updatedAt: Date;
+  name: string;
+  slug: string;
   imageAlt: string;
   imageUrl: string;
 };
