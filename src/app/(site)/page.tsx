@@ -1,27 +1,27 @@
 
 import Gallery from '@/components/Gallery';
-import InstaCarousel from "@/components/InstaCarousel";
-import { getProjects } from "../../sanity/sanity.utils"
+import { getHomeIntro } from "../../sanity/sanity.utils"
+import { PortableText, PortableTextReactComponents } from '@portabletext/react';
+
 
 export default async function Home() {
 
-  const projects = await getProjects();
+  const homeIntro = await getHomeIntro();
+
+  const components: Partial<PortableTextReactComponents> = {
+    block: {
+    normal: ({children}) => <p className='flex flex-wrap text-center max-w-xl text-slate-800 mb-10 -mt-10' >{children}</p>,
+  },
+};
 
   return (
     <main className='flex flex-col items-center justify-center py-[50px]'>
-      <p className='flex flex-wrap text-center max-w-xl text-slate-800 mb-10 -mt-10'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-
-      {projects.map((project) => (
-          <p key={project._id}>{project.name}</p>
+      {homeIntro.map((hi) => (
+          <PortableText key={hi.slug} value={hi.Content} components={components}/>
   ))
 }
 
       <Gallery />
-      {/* <InstaCarousel /> */}
     </main>
   );
 }
