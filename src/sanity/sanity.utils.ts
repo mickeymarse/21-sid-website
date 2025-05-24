@@ -1,6 +1,6 @@
-import { createClient, groq } from 'next-sanity';
-import { Project } from '../../types/Project'
-import clientConfig from './config/client-config';
+import { createClient, groq } from "next-sanity";
+import { Project, ProjectImage } from "../../types/Project";
+import clientConfig from "./config/client-config";
 
 // export async function getProjects(): Promise<Project[]> {
 //   return createClient(clientConfig).fetch(
@@ -17,13 +17,18 @@ import clientConfig from './config/client-config';
 // }
 
 export async function getProjects(): Promise<Project[]> {
-  return createClient(clientConfig).fetch(
-    groq`*[_type == "project"]`
-  )
+  return createClient(clientConfig).fetch(groq`*[_type == "project"]`);
 }
 
-export async function getHomeIntro(): Promise<Project[]> {
+export async function getHomeIntro(): Promise<Project> {
   return createClient(clientConfig).fetch(
-    groq`*[_type == "project" && slug.current == "homepage-introduction"]`
-  )
+    groq`*[_type == "project" && slug.current == "homepage-introduction"][0]`
+  );
+}
+
+export async function getImage(): Promise<ProjectImage> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "project" && slug.current == "homepage-introduction"][0]{  "imageAlt": image.alt,
+  "imageUrl": image.asset->url}`
+  );
 }
