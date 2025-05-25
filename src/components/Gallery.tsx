@@ -3,7 +3,6 @@ import { getGalleryImages } from "@/sanity/sanity.utils";
 
 export default async function Gallery() {
   const galleryImages = await getGalleryImages();
-  console.log(galleryImages);
 
   return (
     <article className="grid grid-cols-2 gap-4 p-8 -pt-16">

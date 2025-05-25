@@ -5,7 +5,7 @@ import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 export default async function Home() {
   const homeIntro = await getHomeIntro();
 
-  const components: Partial<PortableTextReactComponents> = {
+  const homepageIntroductionStyle: Partial<PortableTextReactComponents> = {
     block: {
       normal: ({ children }) => (
         <p className="flex flex-wrap text-center max-w-xl text-slate-800 mb-10 -mt-10">
@@ -18,9 +18,8 @@ export default async function Home() {
   return (
     <main className="flex flex-col items-center justify-center py-[50px]">
       <PortableText
-        key={homeIntro.slug}
         value={homeIntro.Content}
-        components={components}
+        components={homepageIntroductionStyle}
       />
       <Gallery />
     </main>

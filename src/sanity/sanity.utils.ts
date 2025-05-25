@@ -51,6 +51,24 @@ export async function getGalleryImages(): Promise<ProjectImage[]> {
   );
 }
 
+export async function getOpeningHours(): Promise<Project> {
+  return fetchWithCache<Project>(
+    groq`*[_type == "project" && slug.current == "opening-hours"][0]`
+  );
+}
+
+export async function getContacts(): Promise<Project> {
+  return fetchWithCache<Project>(
+    groq`*[_type == "project" && slug.current == "contacts"][0]`
+  );
+}
+
+export async function getCopyright(): Promise<Project> {
+  return fetchWithCache<Project>(
+    groq`*[_type == "project" && slug.current == "copyright"][0]`
+  );
+}
+
 // export async function getImage(): Promise<ProjectImage> {
 //   return createClient(clientConfig).fetch(
 //     groq`*[_type == "project" && slug.current == "homepage-introduction"][0]{  "imageAlt": image.alt,
