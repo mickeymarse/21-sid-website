@@ -4,12 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'flowbite.s3.amazonaws.com',
-        port: '',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.cdninstagram.com',
+        hostname: 'cdn.sanity.io',
         port: '',
       },
     ],

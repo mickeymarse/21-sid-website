@@ -124,7 +124,7 @@ export function BespokeCakesForm() {
             name='clientName'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Your Name</FormLabel>
+                <FormLabel className='required-field'>Your Name</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -137,7 +137,7 @@ export function BespokeCakesForm() {
             name='emailAddress'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email Address</FormLabel>
+                <FormLabel className='required-field'>Email Address</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -150,7 +150,7 @@ export function BespokeCakesForm() {
             name='phoneNumber'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone Number</FormLabel>
+                <FormLabel className='required-field'>Phone Number</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -166,7 +166,7 @@ export function BespokeCakesForm() {
             name='numberPeople'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Number of People</FormLabel>
+                <FormLabel className='required-field'>Number of People</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -182,7 +182,7 @@ export function BespokeCakesForm() {
             name='diet'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Dietary Requirements</FormLabel>
+                <FormLabel className='required-field'>Dietary Requirements</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>

@@ -1,23 +1,36 @@
 import { contactsDataBlur } from '@/lib/contactsDataBlur';
 import Image from 'next/image';
+import { getContent } from "@/sanity/sanity.utils";
+import { PortableText, PortableTextReactComponents } from "next-sanity";
 
-const Contacts = () => {
+  const timeAndContactsStyle: Partial<PortableTextReactComponents> = {
+    block: {
+      h3: ({ children }) => (
+          <h3 className="contacts-h3 mt-10">{children}</h3>
+      ),
+      normal: ({ children }) => (
+        <p className="contacts-p">{children}</p>
+      ),
+    },
+  };
+
+export default async function Contacts() {
+  const contacts = await getContent("contacts");
+
   return (
     <>
       <h3 className='text-center text-3xl mt-10 font-bold'>Contacts</h3>
       <section className='flex flex-col-reverse md:flex-row justify-center gap-24 my-12'>
-        <article className='flex flex-col gap-10 place-self-center'>
-          <span className=''>
-            <h3 className='contacts-h3'>Opening Hours</h3>
-            <p className='contacts-p'>{`Mon - Fri: 8am - 6pm\nSat: 9am - 6pm\nSun: 10am - 4pm`}</p>
+        <article className='flex flex-col gap-10 place-self-center -mt-10'>
+          <span>
+          <PortableText
+            value={contacts.Content}
+            components={timeAndContactsStyle}
+          />
           </span>
           <span>
             <h3 className='contacts-h3'>Address</h3>
             <p className='contacts-p'>{`21 Sidworth Street\nLondon, UK\nE8 3SD`}</p>
-          </span>
-          <span>
-            <h3 className='contacts-h3'>Contacts</h3>
-            <p className='contacts-p'>{`+447777777777\nexample@email.com`}</p>
           </span>
         </article>
         <Image
@@ -38,5 +51,3 @@ const Contacts = () => {
     </>
   );
 };
-
-export default Contacts;
