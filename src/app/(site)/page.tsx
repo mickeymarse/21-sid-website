@@ -1,9 +1,10 @@
 import Gallery from "@/components/Gallery";
-import { getHomeIntro } from "../../sanity/sanity.utils";
+import { getContent } from "../../sanity/sanity.utils";
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
+import { CafeMenu } from "@/components/CafeMenu";
 
 export default async function Home() {
-  const homeIntro = await getHomeIntro();
+  const homeIntro = await getContent('homepage-introduction');
 
   const homepageIntroductionStyle: Partial<PortableTextReactComponents> = {
     block: {
@@ -21,6 +22,7 @@ export default async function Home() {
         value={homeIntro.Content}
         components={homepageIntroductionStyle}
       />
+      <CafeMenu />
       <Gallery />
     </main>
   );

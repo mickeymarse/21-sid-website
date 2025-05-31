@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { format, isToday } from 'date-fns';
+import { format } from 'date-fns';
 import { CalendarIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -110,7 +110,7 @@ export function TarotReadingsForm() {
             name='clientName'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Your Name</FormLabel>
+                <FormLabel className='required-field'>Your Name</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -123,7 +123,7 @@ export function TarotReadingsForm() {
             name='emailAddress'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email Address</FormLabel>
+                <FormLabel className='required-field'>Email Address</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -136,7 +136,7 @@ export function TarotReadingsForm() {
             name='phoneNumber'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone Number</FormLabel>
+                <FormLabel className='required-field'>Phone Number</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>

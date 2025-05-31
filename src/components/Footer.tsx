@@ -1,19 +1,19 @@
-import {
-  getContacts,
-  getCopyright,
-  getOpeningHours,
-} from "@/sanity/sanity.utils";
+import { getContent } from "@/sanity/sanity.utils";
 import { PortableText, PortableTextReactComponents } from "next-sanity";
 import Image from "next/image";
 
 export default async function Footer() {
-  const openingHours = await getOpeningHours();
-  const contacts = await getContacts();
-  const copyright = await getCopyright();
+  const contacts = await getContent("contacts");
+  const copyright = await getContent("copyright");
 
   const timeAndContactsStyle: Partial<PortableTextReactComponents> = {
     block: {
-      normal: ({ children }) => (
+      h3: ({ children }) => (
+        <header className="flex items-center mt-3 mb-1">
+          <h3 className="text-xl font-semibold">{children}</h3>
+        </header>
+      ),
+      p: ({ children }) => (
         <p className="whitespace-pre-wrap mb-5">{children}</p>
       ),
     },
@@ -47,17 +47,12 @@ export default async function Footer() {
         </article>
 
         {/* Address */}
-        <p className="ml-5 mt-8 text-center whitespace-pre-wrap sm:mt-8">
+        <p className="ml-5 mt-8 text-center whitespace-pre-wrap sm:mt-8 font-semibold">
           {`21 Sidworth Street\nLondon, UK\nE8 3SD`}
         </p>
 
         {/* Time and contacts */}
         <article className="flex flex-col items-center m-5 mt-8 text-center">
-          <PortableText
-            value={openingHours.Content}
-            components={timeAndContactsStyle}
-          />
-          <br />
           <PortableText
             value={contacts.Content}
             components={timeAndContactsStyle}

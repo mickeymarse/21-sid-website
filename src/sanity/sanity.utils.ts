@@ -2,36 +2,12 @@ import { createClient, groq } from "next-sanity";
 import { Project, ProjectImage } from "../../types/Project";
 import clientConfig from "./config/client-config";
 
-const CACHE_OPTIONS = { next: { revalidate: 300 } }; // 5 minutes
+const CACHE_OPTIONS = { next: { revalidate: 0 } }; // 5 minutes
 
 const client = createClient(clientConfig);
 
 async function fetchWithCache<T>(query: string, params = {}) {
   return client.fetch<T>(query, params, CACHE_OPTIONS);
-}
-
-// export async function getProjects(): Promise<Project[]> {
-//   return createClient(clientConfig).fetch(
-//     groq`*[_type == "project"]{
-//     _id,
-//     _createdAt,
-//     name,
-//     "slug": slug.current,
-//     "image": image.asset->url,
-//     url,
-//     content,
-//     }`
-//   )
-// }
-
-export async function getProjects(): Promise<Project[]> {
-  return fetchWithCache<Project[]>(groq`*[_type == "project"]`);
-}
-
-export async function getHomeIntro(): Promise<Project> {
-  return fetchWithCache<Project>(
-    groq`*[_type == "project" && slug.current == "homepage-introduction"][0]`
-  );
 }
 
 export async function getGalleryImages(): Promise<ProjectImage[]> {
@@ -51,27 +27,8 @@ export async function getGalleryImages(): Promise<ProjectImage[]> {
   );
 }
 
-export async function getOpeningHours(): Promise<Project> {
+export async function getContent(content: string): Promise<Project> {
   return fetchWithCache<Project>(
-    groq`*[_type == "project" && slug.current == "opening-hours"][0]`
+    groq`*[_type == "project" && slug.current == "${content}"][0]`
   );
 }
-
-export async function getContacts(): Promise<Project> {
-  return fetchWithCache<Project>(
-    groq`*[_type == "project" && slug.current == "contacts"][0]`
-  );
-}
-
-export async function getCopyright(): Promise<Project> {
-  return fetchWithCache<Project>(
-    groq`*[_type == "project" && slug.current == "copyright"][0]`
-  );
-}
-
-// export async function getImage(): Promise<ProjectImage> {
-//   return createClient(clientConfig).fetch(
-//     groq`*[_type == "project" && slug.current == "homepage-introduction"][0]{  "imageAlt": image.alt,
-//   "imageUrl": image.asset->url}`
-//   );
-// }
