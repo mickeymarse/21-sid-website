@@ -1,16 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-
-// shadcn.ui components
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { FaInstagram } from "react-icons/fa6";
 
 // This is the dropdown menu that appears once clicking the burger menu icon
 const Dropdown = () => {
@@ -110,11 +108,29 @@ const Dropdown = () => {
                   </Link>
                 </DropdownMenuLabel>
               </div>
+              <div className="flex flex-row">
+                <DropdownMenuLabel>
+                  <section className="flex justify-start align-middle gap-7 relative">
+                    <Link
+                      href="https://www.instagram.com/21_tarot_and_coffee/"
+                      target="_blank"
+                    >
+                      <FaInstagram className="text-pink_sid text-5xl hover:text-white hover:bg-pink_sid hover:rounded-md" />
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/laura_21-bakes/"
+                      target="_blank"
+                    >
+                      <FaInstagram className="text-green_sid text-5xl hover:text-white hover:bg-green_sid hover:rounded-md" />
+                    </Link>
+                  </section>
+                </DropdownMenuLabel>
+              </div>
             </div>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      </div>
+    </div>
   );
 };
 
