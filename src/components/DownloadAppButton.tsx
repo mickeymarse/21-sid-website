@@ -22,7 +22,7 @@ export default function DownloadAppButton() {
         </DialogTrigger>
         <DialogContent className="max-w-sm md:min-w-lg">
           <DialogHeader>
-            <DialogTitle>It's not ready yet!</DialogTitle>
+            <DialogTitle>{`It\'s not ready yet!`}</DialogTitle>
             <DialogDescription>
               In the meantime, you can follow us to receive updates.
             </DialogDescription>
