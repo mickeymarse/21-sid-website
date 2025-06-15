@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Image from 'next/image';
 
 
@@ -11,7 +9,7 @@ const Header = () => {
       <article className='h-auto max-w-full flex justify-center'>
         <Image
           className='h-auto max-w-full rounded-lg'
-          src='/logo-removebg.png'
+          src='/logo.png'
           alt=''
           width={350}
           height={350}

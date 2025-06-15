@@ -46,7 +46,7 @@ const formSchema = z.object({
   emailAddress: z
     .string({ required_error: 'An email address is required' })
     .email({ message: `Check the email format is correct.` }),
-  dateOrder: z.date(),
+  dateOrder: z.date().optional(),
 });
 
 export function TarotReadingsForm() {
@@ -201,7 +201,7 @@ export function TarotReadingsForm() {
           />
           <Button
             type='submit'
-            className='place-self-end rounded-xl bg-[#c7fcc7] hover:bg-[#fcc7f9]'
+            className='place-self-end rounded-xl bg-green_sid hover:bg-pink_sid'
           >
             Submit
           </Button>

@@ -250,7 +250,7 @@ export function BespokeCakesForm() {
           />
           <Button
             type='submit'
-            className='place-self-end rounded-xl bg-[#fcc7f9] hover:bg-[#c7fcc7]'
+            className='place-self-end rounded-xl bg-pink_sid hover:bg-green_sid'
           >
             Submit
           </Button>

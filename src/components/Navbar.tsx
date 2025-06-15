@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
         {/* bg-[#f2f2f2]/80 */}
         <div className="w-40">
           <Avatar className="h-14 w-14 border border-slate-700">
-            <AvatarImage src="logo.png" />
+            <AvatarImage src="logonoline.png" />
             <AvatarFallback>21 SID</AvatarFallback>
           </Avatar>
         </div>
