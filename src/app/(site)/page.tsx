@@ -9,7 +9,7 @@ export default async function Home() {
   const homepageIntroductionStyle: Partial<PortableTextReactComponents> = {
     block: {
       normal: ({ children }) => (
-        <p className="flex flex-wrap text-center max-w-xl text-slate-800 mb-10 -mt-10">
+        <p className="flex flex-wrap text-center max-w-lg font-medium leading-relaxed text-lg  text-slate-800 mb-10 -mt-10">
           {children}
         </p>
       ),

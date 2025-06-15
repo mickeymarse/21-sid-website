@@ -18,7 +18,7 @@ export default async function About() {
         placeholder={aboutUsDataBlur}
       ></Image>
       <br />
-      <span className='mx-5 max-w-[750px] prose prose-lg font-medium'>
+      <span className='mx-5 max-w-[750px] text-xl line text-justify font-medium leading-relaxed'>
       <PortableText
         value={aboutUs.Content}
       />

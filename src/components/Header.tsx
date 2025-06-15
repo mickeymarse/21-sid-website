@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Header = () => {
   return (
 
-    <section className='flex flex-col items-center justify-center'>
+    <section className='flex flex-col items-center justify-center -mb-16'>
 
       <article className='h-auto max-w-full flex justify-center'>
         <Image
