@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        "hanken-grotesk": "var(--font-hanken-grotesk)",
+        "playfair-display": "var(--font-playfair-display)",
+      },
       spacing: {
         '1/12': '8.333333%',
       },

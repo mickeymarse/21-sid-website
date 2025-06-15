@@ -5,9 +5,9 @@ export default async function Gallery() {
   const galleryImages = await getGalleryImages();
 
   return (
-    <article className="grid grid-cols-2 gap-4 p-8 -pt-16">
+    <article className="grid grid-cols-2 md:gap-2 p-8 md:-pt-16">
       {galleryImages.map((image, idx) => (
-        <section key={image.slug} className="grid gap-4">
+        <section key={image.slug} className="grid md:gap-4">
           <Image
             className={`h-auto max-w-full rounded-lg ${idx % 2 != 0 ? "pt-6 ml-4" : ""}`}
             src={image.imageUrl}

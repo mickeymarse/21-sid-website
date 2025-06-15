@@ -3,7 +3,7 @@ import Wrapper from '@/components/Wrapper';
 
 export default function TarotReadings() {
   return (
-    <section className='flex flex-col max-w-fit my-10 mx-auto justify-center'>
+    <section className='flex flex-col max-w-fit my-10 mx-5 md:mx-auto justify-center'>
       <h3 className='font-bold text-3xl place-self-center'>
         Request a Tarot reading to find guidance!
       </h3>

@@ -27,6 +27,21 @@ export async function getGalleryImages(): Promise<ProjectImage[]> {
   );
 }
 
+export async function getImage(content: string): Promise<ProjectImage> {
+  return fetchWithCache<ProjectImage>(
+    groq`*[_type == "project" && slug.current == "${content}"][0]
+    {
+      _id,
+      _createdAt,
+      _updatedAt,
+      name,
+      "slug": slug.current,
+      "imageAlt": image.alt,
+      "imageUrl": image.asset->url
+    }`
+  );
+}
+
 export async function getContent(content: string): Promise<Project> {
   return fetchWithCache<Project>(
     groq`*[_type == "project" && slug.current == "${content}"][0]`
