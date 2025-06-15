@@ -99,3 +99,7 @@ body {
 .required-field::after {
   @apply content-['*'] text-red-600
 }
+
+.animate-button {
+  @apply rounded-2xl shadow-md hover:shadow-xl hover:text-white transition transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none
+}
