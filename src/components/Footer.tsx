@@ -1,6 +1,7 @@
 import { getContent } from "@/sanity/sanity.utils";
 import { PortableText, PortableTextReactComponents } from "next-sanity";
 import Image from "next/image";
+import SocialLinks from "./SocialLinks";
 
 export default async function Footer() {
   const contacts = await getContent("contacts");
@@ -57,6 +58,7 @@ export default async function Footer() {
             value={contacts.Content}
             components={timeAndContactsStyle}
           />
+          <SocialLinks />
         </article>
       </div>
 

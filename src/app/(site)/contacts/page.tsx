@@ -2,6 +2,7 @@ import { contactsDataBlur } from '@/lib/contactsDataBlur';
 import Image from 'next/image';
 import { getContent } from "@/sanity/sanity.utils";
 import { PortableText, PortableTextReactComponents } from "next-sanity";
+import SocialLinks from '@/components/SocialLinks';
 
   const timeAndContactsStyle: Partial<PortableTextReactComponents> = {
     block: {
@@ -27,6 +28,7 @@ export default async function Contacts() {
             value={contacts.Content}
             components={timeAndContactsStyle}
           />
+          <SocialLinks />
           </span>
           <span>
             <h3 className='contacts-h3'>Address</h3>
