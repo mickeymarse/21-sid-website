@@ -2,7 +2,7 @@ import { createClient, groq } from "next-sanity";
 import { Project, ProjectImage } from "../../types/Project";
 import clientConfig from "./config/client-config";
 
-const CACHE_OPTIONS = { next: { revalidate: 0 } }; // 5 minutes
+const CACHE_OPTIONS = { next: { revalidate: 300 } }; // 5 minutes
 
 const client = createClient(clientConfig);
 
