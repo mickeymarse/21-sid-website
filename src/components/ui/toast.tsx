@@ -44,13 +44,10 @@ const toastVariants = cva(
 )
 
 const Toast = ({
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   ref,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   className,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   variant,
   ...props
