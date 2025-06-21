@@ -38,16 +38,16 @@ export default function RainbowBg({ children }: RainbowBgProps) {
                 {contentHeight > 0 && (
                     <>
                         {contentHeight > 380 && (
-                            <div className="rainbow_green top-[30rem] left-0"></div>
+                            <div className="rainbow_green top-120 left-0"></div>
                         )}
                         {contentHeight > 860 && (
-                            <div className="rainbow_pink top-[60rem] left-0"></div>
+                            <div className="rainbow_pink top-240 left-0"></div>
                         )}
                         {contentHeight > 1540 && (
-                            <div className="rainbow_green top-[90rem] left-0  "></div>
+                            <div className="rainbow_green top-360 left-0  "></div>
                         )}
                         {contentHeight > 2020 && (
-                            <div className="rainbow_pink top-[120rem] left-0  "></div>
+                            <div className="rainbow_pink top-480 left-0  "></div>
                         )}
                     </>
                 )}
@@ -58,16 +58,16 @@ export default function RainbowBg({ children }: RainbowBgProps) {
                 {contentHeight > 0 && (
                     <>
                         {contentHeight > 380 && (
-                            <div className="rainbow_pink top-[30rem] right-0"></div>
+                            <div className="rainbow_pink top-120 right-0"></div>
                         )}
                         {contentHeight > 860 && (
-                            <div className="rainbow_green top-[60rem] right-0"></div>
+                            <div className="rainbow_green top-240 right-0"></div>
                         )}
                         {contentHeight > 1540 && (
-                            <div className="rainbow_pink top-[90rem] right-0  "></div>
+                            <div className="rainbow_pink top-360 right-0  "></div>
                         )}
                         {contentHeight > 2020 && (
-                            <div className="rainbow_green top-[120rem] right-0  "></div>
+                            <div className="rainbow_green top-480 right-0  "></div>
                         )}
                     </>
                 )}
@@ -79,16 +79,16 @@ export default function RainbowBg({ children }: RainbowBgProps) {
                     <>
                         <div className="rainbow_white  top-0 right-1/12"></div>
                         {contentHeight > 380 && (
-                            <div className="rainbow_pink  top-[30rem] right-1/12 "></div>
+                            <div className="rainbow_pink  top-120 right-1/12 "></div>
                         )}
                         {contentHeight > 860 && (
-                            <div className="rainbow_green top-[60rem] right-1/12 "></div>
+                            <div className="rainbow_green top-240 right-1/12 "></div>
                         )}
                         {contentHeight > 1540 && (
-                            <div className="rainbow_pink  top-[90rem] right-1/12 "></div>
+                            <div className="rainbow_pink  top-360 right-1/12 "></div>
                         )}
                         {contentHeight > 2020 && (
-                            <div className="rainbow_green top-[120rem] right-1/12  "></div>
+                            <div className="rainbow_green top-480 right-1/12  "></div>
                         )}
                     </>
                 )}

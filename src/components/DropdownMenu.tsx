@@ -30,7 +30,7 @@ const Dropdown = () => {
           >
             <button
               onClick={handleToggleDropdown}
-              className="focus:outline-none "
+              className="focus:outline-hidden "
             >
               {isOpen ? (
                 <div className="relative w-6 h-6">
