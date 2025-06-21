@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useState } from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/components/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
 import {
@@ -88,29 +88,33 @@ export function TarotReadingsForm() {
     <>
       {isDialogOpen && (
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className='bg-red-100 border-double rounded-lg border-2 border-red-300 h-fit w-full ring-2 ring-red-300'>
+          <DialogContent className="bg-red-100 border-double rounded-lg border-2 border-red-300 h-fit w-full ring-2 ring-red-300">
             <DialogHeader>
-              <DialogTitle className='text-xl md:text-2xl text-center'>{`\uD83E\uDE77 Your request has been sent! \uD83E\uDE77`}</DialogTitle>
-              <DialogDescription className='text-lg md:text-xl'>
+              <DialogTitle className="text-xl md:text-2xl text-center">{`\uD83E\uDE77 Your request has been sent! \uD83E\uDE77`}</DialogTitle>
+              <DialogDescription className="text-lg md:text-xl">
                 <br />
-                <p>
-                  Soon you will receive an email of confirmation with the details of your request.
-                </p>
+                Soon you will receive an email of confirmation with the details
+                of your request.
                 <br />
-                <p>After that, Laura will contact you via phone to finalise the details.</p>
+                <br />
+                After that, Laura will contact you via phone to finalise the
+                details.
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
         </Dialog>
       )}
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8 flex flex-col'>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-8 flex flex-col"
+        >
           <FormField
             control={form.control}
-            name='clientName'
+            name="clientName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='required-field'>Your Name</FormLabel>
+                <FormLabel className="required-field">Your Name</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -120,10 +124,10 @@ export function TarotReadingsForm() {
           />
           <FormField
             control={form.control}
-            name='emailAddress'
+            name="emailAddress"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='required-field'>Email Address</FormLabel>
+                <FormLabel className="required-field">Email Address</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -133,10 +137,10 @@ export function TarotReadingsForm() {
           />
           <FormField
             control={form.control}
-            name='phoneNumber'
+            name="phoneNumber"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='required-field'>Phone Number</FormLabel>
+                <FormLabel className="required-field">Phone Number</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -149,7 +153,7 @@ export function TarotReadingsForm() {
           />
           <FormField
             control={form.control}
-            name='enquiryType'
+            name="enquiryType"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Type of enquiry</FormLabel>
@@ -165,43 +169,49 @@ export function TarotReadingsForm() {
           />
           <FormField
             control={form.control}
-            name='dateOrder'
+            name="dateOrder"
             render={({ field }) => (
-              <FormItem className='flex flex-col'>
+              <FormItem className="flex flex-col">
                 <FormLabel>Preferred Date</FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
                       <Button
-                        variant={'outline'}
+                        variant={"outline"}
                         className={cn(
-                          'w-[240px] pl-3 text-left font-normal',
-                          !field.value && 'text-muted-foreground'
+                          "w-[240px] pl-3 text-left font-normal",
+                          !field.value && "text-muted-foreground"
                         )}
                       >
-                        {field.value ? format(field.value, 'PPP') : <span>Pick a date</span>}
-                        <CalendarIcon className='ml-auto h-4 w-4 opacity-50' />
+                        {field.value ? (
+                          format(field.value, "PPP")
+                        ) : (
+                          <span>Pick a date</span>
+                        )}
+                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                       </Button>
                     </FormControl>
                   </PopoverTrigger>
-                  <PopoverContent className='w-auto p-0 bg-white' align='start'>
+                  <PopoverContent className="w-auto p-0 bg-white" align="start">
                     <Calendar
-                      mode='single'
+                      mode="single"
                       selected={field.value}
                       onSelect={field.onChange}
                       disabled={(date) => date < new Date()}
-                      initialFocus
+                      autoFocus
                     />
                   </PopoverContent>
                 </Popover>
-                <FormDescription>When would you like your reading to be?</FormDescription>
+                <FormDescription>
+                  When would you like your reading to be?
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
           <Button
-            type='submit'
-            className='place-self-end rounded-xl bg-green_sid hover:bg-pink_sid'
+            type="submit"
+            className="place-self-end rounded-xl bg-green_sid hover:bg-pink_sid"
           >
             Submit
           </Button>

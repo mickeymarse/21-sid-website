@@ -56,7 +56,7 @@ export function CafeMenu() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="outline" className="text-lg">
+        <Button variant="outline" className="text-lg hover:cursor-pointer">
           <CakeSlice className="mr-1 text-green_sid" /> Click here to check our
           menu <Cookie className="ml-1 text-pink_sid" />
         </Button>

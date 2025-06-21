@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`!scroll-smooth ${hankenGrotesk.variable} ${playfairDisplay.variable}`}>
+    <html lang="en" className={`scroll-smooth! ${hankenGrotesk.variable} ${playfairDisplay.variable}`}>
       <body className="bg-gray-50 text-gray-950">
         <RainbowBg>
           <Navbar />

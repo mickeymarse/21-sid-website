@@ -30,7 +30,7 @@ const Dropdown = () => {
           >
             <button
               onClick={handleToggleDropdown}
-              className="focus:outline-none "
+              className="focus:outline-hidden "
             >
               {isOpen ? (
                 <div className="relative w-6 h-6">
@@ -47,86 +47,68 @@ const Dropdown = () => {
             </button>
           </DropdownMenuTrigger>
           {/* Style DropdownMenuContent to style the whole container */}
-          <DropdownMenuContent className="bg-[#f2f2f2] h-screen w-screen mt-4 border-none">
-            <div className="space-y-10 m-6">
-              <div className="flex flex-row m-0 p-0">
-                <DropdownMenuLabel>
-                  <Link
-                    className="text-lg text-slate-900 font-normal relative  line-gradient-green"
-                    href="/"
-                    onClick={handleToggleDropdown}
-                  >
-                    Home
-                  </Link>
-                </DropdownMenuLabel>
-              </div>
-              <div className="m-0 p-0 space-y-0">
-                <div className="flex flex-row">
-                  <DropdownMenuLabel>
-                    <Link
-                      className="text-lg text-slate-900 font-normal relative  line-gradient-pink"
-                      href="/bespoke-cakes"
-                      onClick={handleToggleDropdown}
-                    >
-                      Bespoke Cakes
-                    </Link>
-                  </DropdownMenuLabel>
-                </div>
-              </div>
-              <div className="space-y-0">
-                <div className="flex flex-row">
-                  <DropdownMenuLabel>
-                    <Link
-                      className="text-lg text-slate-900 font-normal relative  line-gradient-green"
-                      href="/tarot-readings"
-                      onClick={handleToggleDropdown}
-                    >
-                      Tarot Readings
-                    </Link>
-                  </DropdownMenuLabel>
-                </div>
-              </div>
-              <div className="flex flex-row">
-                <DropdownMenuLabel>
-                  <Link
-                    className="text-lg text-slate-900 font-normal relative   line-gradient-pink"
-                    href="/about-us"
-                    onClick={handleToggleDropdown}
-                  >
-                    About us
-                  </Link>
-                </DropdownMenuLabel>
-              </div>
-              <div className="flex flex-row">
-                <DropdownMenuLabel>
-                  <Link
-                    className="text-lg text-slate-900 font-normal relative   line-gradient-green"
-                    href="/contacts"
-                    onClick={handleToggleDropdown}
-                  >
-                    Contact
-                  </Link>
-                </DropdownMenuLabel>
-              </div>
-              <div className="flex flex-row">
-                <DropdownMenuLabel>
-                  <section className="flex justify-start align-middle gap-7 relative">
-                    <Link
-                      href="https://www.instagram.com/21_tarot_and_coffee/"
-                      target="_blank"
-                    >
-                      <FaInstagram className="text-pink_sid text-5xl hover:text-white hover:bg-pink_sid hover:rounded-md" />
-                    </Link>
-                    <Link
-                      href="https://www.instagram.com/laura_21-bakes/"
-                      target="_blank"
-                    >
-                      <FaInstagram className="text-green_sid text-5xl hover:text-white hover:bg-green_sid hover:rounded-md" />
-                    </Link>
-                  </section>
-                </DropdownMenuLabel>
-              </div>
-            </div>
+          <DropdownMenuContent className="flex flex-col gap-y-10 bg-[#f2f2f2] h-screen w-screen mt-4 border-none">
+            <DropdownMenuLabel>
+              <Link
+                className="text-lg text-slate-900 font-normal relative line-gradient-green"
+                href="/"
+                onClick={handleToggleDropdown}
+              >
+                Home
+              </Link>
+            </DropdownMenuLabel>
+            <DropdownMenuLabel>
+              <Link
+                className="text-lg text-slate-900 font-normal relative line-gradient-pink"
+                href="/bespoke-cakes"
+                onClick={handleToggleDropdown}
+              >
+                Bespoke Cakes
+              </Link>
+            </DropdownMenuLabel>
+            <DropdownMenuLabel>
+              <Link
+                className="text-lg text-slate-900 font-normal relative line-gradient-green"
+                href="/tarot-readings"
+                onClick={handleToggleDropdown}
+              >
+                Tarot Readings
+              </Link>
+            </DropdownMenuLabel>
+            <DropdownMenuLabel>
+              <Link
+                className="text-lg text-slate-900 font-normal relative line-gradient-pink"
+                href="/about-us"
+                onClick={handleToggleDropdown}
+              >
+                About us
+              </Link>
+            </DropdownMenuLabel>
+            <DropdownMenuLabel>
+              <Link
+                className="text-lg text-slate-900 font-normal relative line-gradient-green"
+                href="/contacts"
+                onClick={handleToggleDropdown}
+              >
+                Contact
+              </Link>
+            </DropdownMenuLabel>
+            <DropdownMenuLabel>
+              <section className="flex justify-start align-middle gap-7 relative">
+                <Link
+                  href="https://www.instagram.com/21_tarot_and_coffee/"
+                  target="_blank"
+                >
+                  <FaInstagram className="text-pink_sid text-5xl hover:text-white hover:bg-pink_sid hover:rounded-md" />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/laura_21-bakes/"
+                  target="_blank"
+                >
+                  <FaInstagram className="text-green_sid text-5xl hover:text-white hover:bg-green_sid hover:rounded-md" />
+                </Link>
+              </section>
+            </DropdownMenuLabel>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
