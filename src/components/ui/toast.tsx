@@ -43,22 +43,26 @@ const toastVariants = cva(
   }
 )
 
-const Toast = (
-  {
-    ref,
-    className,
-    variant,
-    ...props
-  }
-) => {
+const Toast = ({
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  ref,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  className,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  variant,
+  ...props
+}) => {
   return (
     <ToastPrimitives.Root
       ref={ref}
       className={cn(toastVariants({ variant }), className)}
       {...props}
     />
-  )
-}
+  );
+};
 Toast.displayName = ToastPrimitives.Root.displayName
 
 const ToastAction = (
