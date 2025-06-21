@@ -30,7 +30,7 @@ export default function DownloadAppButton() {
           <SocialLinks />
           <DialogFooter className="sm:justify-start">
             <DialogClose asChild>
-              <Button type="button">Close</Button>
+              <Button type="button" className="hover:cursor-pointer">Close</Button>
             </DialogClose>
           </DialogFooter>
         </DialogContent>
