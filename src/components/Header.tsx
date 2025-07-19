@@ -1,23 +1,16 @@
 import Image from 'next/image';
+import { ReactElement } from 'react';
 
-
-const Header = () => {
+export default function Header():ReactElement {
   return (
-
-    <section className='flex flex-col items-center justify-center -mb-16'>
-
-      <article className='h-auto max-w-full flex justify-center'>
+    <section className='flex flex-col items-center justify-center -mb-10 h-auto max-w-full '>
         <Image
           className='h-auto max-w-full rounded-lg'
           src='/logo.png'
-          alt=''
+          alt='21 Sid logo'
           width={350}
           height={350}
         />
-      </article>
     </section>
-
   );
 };
-
-export default Header;
