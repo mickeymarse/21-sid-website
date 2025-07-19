@@ -1,21 +1,23 @@
-"use client";
-
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import NavigationButton from "./NavigationButton";
 import Dropdown from "./DropdownMenu";
 import DownloadAppButton from "./DownloadAppButton";
+import Image from "next/image";
+import { ReactElement } from "react";
 
-const Navbar: React.FC = () => {
+export default function Navbar(): ReactElement {
   return (
     <div className="mb-4">
       {/* Larger screens */}
       <nav className="sticky top-0 hidden lg:flex items-center justify-between flex-wrap  py-2 px-8 w-full h-21">
         {/* bg-[#f2f2f2]/80 */}
         <div className="w-40">
-          <Avatar className="h-14 w-14 border border-slate-700">
-            <AvatarImage src="logonoline.png" />
-            <AvatarFallback>21 SID</AvatarFallback>
-          </Avatar>
+          <Image
+            className="h-auto max-w-full rounded-full border-1 border-gray-900 border-solid"
+            src="/logonoline.png"
+            alt="21 Sid logo surrounded in a black circle."
+            width={55}
+            height={55}
+          />
         </div>
         <div className="flex flex-wrap m-0 p-0 items-center justify-center">
           <NavigationButton href="/" page="Home" color="green" />
@@ -43,5 +45,3 @@ const Navbar: React.FC = () => {
     </div>
   );
 };
-
-export default Navbar;
