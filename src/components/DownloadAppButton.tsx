@@ -20,11 +20,15 @@ export default function DownloadAppButton() {
             Download the app
           </Button>
         </DialogTrigger>
-        <DialogContent className="max-w-sm md:min-w-lg">
+        <DialogContent className="max-w-sm md:max-w-md">
           <DialogHeader>
             <DialogTitle>{`It\'s not ready yet!`}</DialogTitle>
             <DialogDescription>
-              In the meantime, you can follow us to receive updates or leave us a <a href="https://maps.app.goo.gl/9DoGYp21NnQ8h4z19" target="_blank" className="underline hover:text-pink_sid">Google review</a>.
+              In the meantime, you can follow us to receive updates
+              <br/>
+              or
+              <br/>
+              leave us a <a href="https://maps.app.goo.gl/9DoGYp21NnQ8h4z19" target="_blank" className="underline hover:text-pink_sid">Google review</a>.
             </DialogDescription>
           </DialogHeader>
           <SocialLinks />
